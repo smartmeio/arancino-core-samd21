@@ -1,0 +1,54 @@
+# SPDX-license-identifier: Apache-2.0
+#
+# Copyright (c) 2019 smartme.io
+#
+# Authors:  Sergio Tomasello <sergio@smartme.io>
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+# Arancino
+# ---------------------------------------
+
+arancino.name=Arancino
+arancino.upload.via_ssh=true
+
+# To be defined
+#arancino.vid.0=0x0XXXXXXXXX
+#arancino.pid.0=0x0XXXXXXXXX
+
+arancino.upload.tool=bossac
+arancino.upload.protocol=sam-ba
+arancino.upload.maximum_size=262144
+arancino.upload.use_1200bps_touch=true
+arancino.upload.wait_for_upload_port=true
+arancino.upload.native_usb=true
+arancino.build.mcu=cortex-m0plus
+arancino.build.f_cpu=48000000L
+arancino.build.usb_product="Arancino"
+arancino.build.usb_manufacturer="smartme.io"
+arancino.build.board=SAMD_ARANCINO
+arancino.build.core=arduino
+arancino.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags}
+arancino.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+arancino.build.openocdscript=openocd_scripts/arduino_zero.cfg
+arancino.build.variant=arancino
+arancino.build.variant_system_lib=
+
+# To be defined
+#arancino.build.vid=0x0XXXXXXXXX
+#arancino.build.pid=0x0XXXXXXXXX
+arancino.build.vid=0x2341
+arancino.build.pid=0x804d
+
+arancino.bootloader.tool=openocd
+arancino.bootloader.file=arancino/samd21_sam_ba.bin

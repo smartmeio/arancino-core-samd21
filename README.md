@@ -1,1 +1,1 @@
-Arancino Platoform for Arduino IDE
+smartme.io platform for Arduino IDE
