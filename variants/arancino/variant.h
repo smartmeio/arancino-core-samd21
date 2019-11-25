@@ -53,7 +53,10 @@ extern "C"
  *----------------------------------------------------------------------------*/
 
 // Number of pins defined in PinDescription array
-#define PINS_COUNT           (26u)
+#ifdef __cplusplus
+extern "C" unsigned int PINCOUNT_fn();
+#endif
+#define PINS_COUNT           (PINCOUNT_fn())
 #define NUM_DIGITAL_PINS     (20u)
 #define NUM_ANALOG_INPUTS    (6u)
 #define NUM_ANALOG_OUTPUTS   (1u)
@@ -78,64 +81,12 @@ extern "C"
 
 // LEDs
 #define PIN_LED_13           (13u)
-//#define PIN_LED_RXL          (25u)
-//#define PIN_LED_TXL          (26u)
+#define PIN_LED_RXL          (25u)
+#define PIN_LED_TXL          (26u)
 #define PIN_LED              PIN_LED_13
-//#define PIN_LED2             PIN_LED_RXL
-//#define PIN_LED3             PIN_LED_TXL
+#define PIN_LED2             PIN_LED_RXL
+#define PIN_LED3             PIN_LED_TXL
 #define LED_BUILTIN          PIN_LED_13
-
-//Connector 1 PINs
-#define CN1_AN                (14u)
-#define CN1_RST               (12u)
-#define CN1_CS                (9u)
-#define CN1_SCK               (24u)
-#define CN1_MISO              (22u)
-#define CN1_MOSI              (23u)
-#define CN1_AUX5              (5u)
-#define CN1_D5                CN1_AUX5
-#define CN1_AUX4              (4u)
-#define CN1_D4                CN1_AUX4
-#define CN1_AUX1              (18u)
-#define CN1_A4                CN1_AUX1
-#define CN1_AUX0              (8u)
-#define CN1_D8                CN1_AUX0
-#define CN1_SDA               (20u)
-#define CN1_SCL               (21u)
-#define CN1_TX                (1u)
-#define CN1_RX                (0u)
-#define CN1_INT               (16u)
-#define CN1_PWM               (2u)
-
-//Connector 2 PINs
-#define CN2_AN                (15u)
-#define CN2_RST               (38u)
-#define CN2_CS                (10u)
-#define CN2_SCK               (24u) // same as CN1_SCK
-#define CN2_MISO              (22u) // same as CN1_MISO
-#define CN2_MOSI              (23u) // same as CN1_MOSI
-#define CN2_AUX5              (7u)
-#define CN2_D7                CN2_AUX5
-#define CN2_AUX4              (6u)
-#define CN2_D6                CN2_AUX4
-#define CN2_AUX1              (19u)
-#define CN2_A5                CN2_AUX1
-#define CN2_AUX0              (11u)
-#define CN2_D11               CN2_AUX0
-#define CN2_SDA               (20u) // same as CN1_SDA
-#define CN2_SCL               (21u) // same as CN1_SCL
-#define CN2_TX                (30u)
-#define CN2_RX                (31u)
-#define CN2_INT               (17u)
-#define CN2_PWM               (3u)
-
-//Arancino SPI & I2C
-#define CN_SCK               (24u) // same as CN1_SCK
-#define CN_MISO              (22u) // same as CN1_MISO
-#define CN_MOSI              (23u) // same as CN1_MOSI
-#define CN_SDA               (20u) // same as CN1_SDA
-#define CN_SCL               (21u) // same as CN1_SCL
-
 
 /*
  * Analog pins
@@ -250,6 +201,14 @@ extern Uart Serial1;
 
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+unsigned int PINCOUNT_fn();
+#ifdef __cplusplus
+}
+#endif
+
 // These serial port names are intended to allow libraries and architecture-neutral
 // sketches to automatically default to the correct port name for a particular type
 // of use.  For example, a GPS module would normally connect to SERIAL_PORT_HARDWARE_OPEN,
@@ -272,3 +231,4 @@ extern Uart Serial1;
 #define SERIAL_PORT_HARDWARE_OPEN   Serial1
 
 #endif /* _VARIANT_ARDUINO_ZERO_ */
+

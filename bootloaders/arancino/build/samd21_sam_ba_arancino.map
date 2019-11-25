@@ -1,0 +1,500 @@
+Archive member included to satisfy reference by file (symbol)
+
+/Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+                              /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o (exit)
+/Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+                              /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o) (_global_impure_ptr)
+/Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+                              /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o (__libc_init_array)
+/Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memset.o)
+                              /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o (memset)
+/Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(_exit.o)
+                              /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o) (_exit)
+/Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memcpy-stub.o)
+                              samd21_sam_ba_arancino.elf.ltrans0.ltrans.o (memcpy)
+/Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-strlen.o)
+                              samd21_sam_ba_arancino.elf.ltrans0.ltrans.o (strlen)
+
+Allocating common symbols
+Common symbol       size              file
+
+b_sharp_received    0x1               build/sam_ba_serial.o (symbol from plugin)
+udd_ep_out_cache_buffer
+                    0x80              build/board_driver_usb.o (symbol from plugin)
+j                   0x1               build/sam_ba_monitor.o (symbol from plugin)
+udd_ep_in_cache_buffer
+                    0x80              build/board_driver_usb.o (symbol from plugin)
+idx_rx_write        0x1               build/sam_ba_serial.o (symbol from plugin)
+size_of_data        0x2               build/sam_ba_serial.o (symbol from plugin)
+length              0x4               build/sam_ba_monitor.o (symbol from plugin)
+ptr                 0x4               build/sam_ba_monitor.o (symbol from plugin)
+command             0x1               build/sam_ba_monitor.o (symbol from plugin)
+pulSketch_Start_Address
+                    0x4               build/main.o (symbol from plugin)
+MAX_FLASH           0x4               build/sam_ba_monitor.o (symbol from plugin)
+PAGES               0x4               build/sam_ba_monitor.o (symbol from plugin)
+idx_tx_read         0x1               build/sam_ba_serial.o (symbol from plugin)
+i                   0x4               build/sam_ba_monitor.o (symbol from plugin)
+buffer_tx_usart     0x80              build/sam_ba_serial.o (symbol from plugin)
+sam_ba_cdc          0xc               build/sam_ba_usb.o (symbol from plugin)
+error_timeout       0x1               build/sam_ba_serial.o (symbol from plugin)
+usb_endpoint_table  0x80              build/board_driver_usb.o (symbol from plugin)
+PAGE_SIZE           0x4               build/sam_ba_monitor.o (symbol from plugin)
+data                0x40              build/sam_ba_monitor.o (symbol from plugin)
+mode_of_transfer    0x1               build/sam_ba_serial.o (symbol from plugin)
+ptr_data            0x4               build/sam_ba_monitor.o (symbol from plugin)
+idx_rx_read         0x1               build/sam_ba_serial.o (symbol from plugin)
+ptr_monitor_if      0x4               build/sam_ba_monitor.o (symbol from plugin)
+sp                  0x4               build/sam_ba_monitor.o (symbol from plugin)
+current_number      0x4               build/sam_ba_monitor.o (symbol from plugin)
+idx_tx_write        0x1               build/sam_ba_serial.o (symbol from plugin)
+u32tmp              0x4               build/sam_ba_monitor.o (symbol from plugin)
+buffer_rx_usart     0x80              build/sam_ba_serial.o (symbol from plugin)
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crti.o
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crti.o
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crti.o
+ .data          0x0000000000000000        0x4 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+ .text          0x0000000000000000       0x78 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+ .ARM.extab     0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+ .ARM.exidx     0x0000000000000000        0x8 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+ .ARM.attributes
+                0x0000000000000000       0x1b /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+ .text          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+ .text.exit     0x0000000000000000       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+ .debug_frame   0x0000000000000000       0x28 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+ .text          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x0000000000000000        0x4 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+ .data.impure_data
+                0x0000000000000000       0x60 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x0000000000000000        0x4 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+ .text          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+ .text.__libc_init_array
+                0x0000000000000000       0x48 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000000000       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+ .text          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memset.o)
+ .text          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memcpy-stub.o)
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memcpy-stub.o)
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-strlen.o)
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-strlen.o)
+ .text          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(_exit.o)
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(_exit.o)
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(_exit.o)
+ .text._exit    0x0000000000000000        0x4 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(_exit.o)
+ .debug_frame   0x0000000000000000       0x20 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(_exit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(_exit.o)
+ .text          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtend.o
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtend.o
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtend.o
+ .text          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtn.o
+ .data          0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtn.o
+ .bss           0x0000000000000000        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000000000000 0x0000000000002000 xr
+RAM              0x0000000020000000 0x0000000000007ffc xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crti.o
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+START GROUP
+LOAD samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libm.a
+END GROUP
+START GROUP
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/libgcc.a
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a
+END GROUP
+START GROUP
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/libgcc.a
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a
+END GROUP
+START GROUP
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/libgcc.a
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a
+END GROUP
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtend.o
+LOAD /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtn.o
+                0x0000000000000000                . = ORIGIN (FLASH)
+
+.vectors        0x0000000000000000       0x40
+ *(.isr_vector)
+ .isr_vector    0x0000000000000000       0x40 samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                0x0000000000000000                exception_table
+
+.text           0x0000000000000040     0x1620
+ *(.text*)
+ .text          0x0000000000000040       0x48 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+ .text          0x0000000000000088      0xed4 samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                0x0000000000000f10                Reset_Handler
+ .text.startup  0x0000000000000f5c      0x3f4 samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                0x0000000000000f5c                main
+ .text.memset   0x0000000000001350       0x10 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memset.o)
+                0x0000000000001350                memset
+ .text.memcpy   0x0000000000001360       0x12 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000000001360                memcpy
+ .text          0x0000000000001372        0xe /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-strlen.o)
+                0x0000000000001372                strlen
+ *(.init)
+ .init          0x0000000000001380        0x4 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crti.o
+                0x0000000000001380                _init
+ .init          0x0000000000001384        0x8 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtn.o
+ *(.fini)
+ .fini          0x000000000000138c        0x4 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crti.o
+                0x000000000000138c                _fini
+ .fini          0x0000000000001390        0x8 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtn.o
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+ *(.rodata*)
+ .rodata        0x0000000000001398      0x284 samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+ .rodata.str1.1
+                0x000000000000161c       0x3d samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                         0x40 (size before relaxing)
+ *(.eh_frame*)
+ *fill*         0x0000000000001659        0x3 
+ .eh_frame      0x000000000000165c        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+ .eh_frame      0x000000000000165c        0x4 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtend.o
+
+.glue_7         0x0000000000001660        0x0
+ .glue_7        0x0000000000001660        0x0 linker stubs
+
+.glue_7t        0x0000000000001660        0x0
+ .glue_7t       0x0000000000001660        0x0 linker stubs
+
+.vfp11_veneer   0x0000000000001660        0x0
+ .vfp11_veneer  0x0000000000001660        0x0 linker stubs
+
+.v4_bx          0x0000000000001660        0x0
+ .v4_bx         0x0000000000001660        0x0 linker stubs
+
+.iplt           0x0000000000001660        0x0
+ .iplt          0x0000000000001660        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+
+.rel.dyn        0x0000000000001660        0x0
+ .rel.iplt      0x0000000000001660        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x0000000000001660                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x0000000000001660                __exidx_end = .
+                0x0000000000001660                __etext = .
+                0x0000000000002000                PROVIDE (__sketch_vectors_ptr, (ORIGIN (FLASH) + LENGTH (FLASH)))
+
+.data           0x0000000020000000       0x5c load address 0x0000000000001660
+                0x0000000020000000                __data_start__ = .
+ *(vtable)
+ *(.data*)
+ .data          0x0000000020000000       0x51 samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                0x0000000020000054                . = ALIGN (0x4)
+ *fill*         0x0000000020000051        0x3 
+                0x0000000020000054                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x0000000020000054                PROVIDE (__preinit_array_end, .)
+                0x0000000020000054                . = ALIGN (0x4)
+                0x0000000020000054                PROVIDE (__init_array_start, .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array)
+ .init_array    0x0000000020000054        0x4 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+                0x0000000020000058                PROVIDE (__init_array_end, .)
+                0x0000000020000058                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__fini_array_start, .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array)
+ .fini_array    0x0000000020000058        0x4 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+                [!provide]                        PROVIDE (__fini_array_end, .)
+ *(.jcr*)
+                0x000000002000005c                . = ALIGN (0x4)
+                0x000000002000005c                __data_end__ = .
+
+.igot.plt       0x000000002000005c        0x0 load address 0x00000000000016bc
+ .igot.plt      0x000000002000005c        0x0 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+
+.bss            0x000000002000005c      0x34c load address 0x00000000000016bc
+                0x000000002000005c                . = ALIGN (0x4)
+                0x000000002000005c                __bss_start__ = .
+ *(.bss*)
+ .bss           0x000000002000005c       0x1c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+ .bss           0x0000000020000078      0x330 samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+ *(COMMON)
+                0x00000000200003a8                . = ALIGN (0x4)
+                0x00000000200003a8                __bss_end__ = .
+
+.heap           0x00000000200003a8        0x0
+                0x00000000200003a8                __end__ = .
+                [!provide]                        PROVIDE (end, .)
+ *(.heap*)
+                0x00000000200003a8                __HeapLimit = .
+
+.stack_dummy    0x00000000200003a8        0x0
+ *(.stack*)
+                0x0000000020007ffc                __StackTop = (ORIGIN (RAM) + LENGTH (RAM))
+                0x0000000020007ffc                __StackLimit = (__StackTop - SIZEOF (.stack_dummy))
+                0x0000000020007ffc                PROVIDE (__stack, __StackTop)
+                0x0000000020007ffb                __ram_end__ = ((ORIGIN (RAM) + LENGTH (RAM)) - 0x1)
+                0x0000000000000001                ASSERT ((__StackLimit >= __HeapLimit), region RAM overflowed with stack)
+OUTPUT(build/samd21_sam_ba_arancino.elf elf32-littlearm)
+
+.ARM.attributes
+                0x0000000000000000       0x28
+ .ARM.attributes
+                0x0000000000000000       0x1e /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crti.o
+ .ARM.attributes
+                0x000000000000001e       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+ .ARM.attributes
+                0x000000000000004a       0x30 samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+ .ARM.attributes
+                0x000000000000007a       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000000000000a6       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000000000000d2       0x1c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-strlen.o)
+ .ARM.attributes
+                0x00000000000000ee       0x2c /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtend.o
+ .ARM.attributes
+                0x000000000000011a       0x1e /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtn.o
+
+.comment        0x0000000000000000       0x7e
+ .comment       0x0000000000000000       0x7e samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                         0x7f (size before relaxing)
+
+.debug_frame    0x0000000000000000       0x48
+ .debug_frame   0x0000000000000000       0x20 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000000020       0x28 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memcpy-stub.o)
+
+Cross Reference Table
+
+Symbol                                            File
+HardFault_Handler                                 build/board_startup.o (symbol from plugin)
+LED_pulse                                         build/board_driver_led.o (symbol from plugin)
+                                                  build/main.o (symbol from plugin)
+MAX_FLASH                                         build/sam_ba_monitor.o (symbol from plugin)
+NMI_Handler                                       build/board_startup.o (symbol from plugin)
+PAGES                                             build/sam_ba_monitor.o (symbol from plugin)
+PAGE_SIZE                                         build/sam_ba_monitor.o (symbol from plugin)
+PendSV_Handler                                    build/board_startup.o (symbol from plugin)
+Reset_Handler                                     samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/board_startup.o (symbol from plugin)
+RomBOOT_ExtendedCapabilities                      build/sam_ba_monitor.o (symbol from plugin)
+RomBOOT_Version                                   build/sam_ba_monitor.o (symbol from plugin)
+SVC_Handler                                       build/board_startup.o (symbol from plugin)
+SysTick_Handler                                   build/main.o (symbol from plugin)
+                                                  build/board_startup.o (symbol from plugin)
+USB_Configure                                     build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_usb.o (symbol from plugin)
+USB_Init                                          build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_usb.o (symbol from plugin)
+USB_IsConfigured                                  build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_cdc.o (symbol from plugin)
+USB_Open                                          build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_usb.o (symbol from plugin)
+USB_Read                                          build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_cdc.o (symbol from plugin)
+USB_Read_blocking                                 build/board_driver_usb.o (symbol from plugin)
+USB_SendStall                                     build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_usb.o (symbol from plugin)
+USB_SendString                                    build/sam_ba_usb.o (symbol from plugin)
+USB_SendZlp                                       build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_usb.o (symbol from plugin)
+USB_SetAddress                                    build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_usb.o (symbol from plugin)
+USB_Write                                         build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_cdc.o (symbol from plugin)
+                                                  build/sam_ba_usb.o (symbol from plugin)
+__StackTop                                        samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/board_startup.o (symbol from plugin)
+__bss_end__                                       samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/board_startup.o (symbol from plugin)
+                                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+__bss_start__                                     samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/board_startup.o (symbol from plugin)
+                                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+__call_exitprocs                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+__data_end__                                      samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/board_startup.o (symbol from plugin)
+__data_start__                                    samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/board_startup.o (symbol from plugin)
+__deregister_frame_info                           /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+__dso_handle                                      /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+__etext                                           samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/board_startup.o (symbol from plugin)
+__init_array_end                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+__init_array_start                                /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+__libc_fini_array                                 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+__libc_init_array                                 /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+                                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+__preinit_array_end                               /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+__preinit_array_start                             /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+__register_frame_info                             /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crtbegin.o
+__sf_fake_stderr                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+__sf_fake_stdin                                   /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+__sf_fake_stdout                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+__sketch_vectors_ptr                              samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/main.o (symbol from plugin)
+__stack                                           /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+_exit                                             /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(_exit.o)
+                                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+_fini                                             /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crti.o
+_global_impure_ptr                                /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+                                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+_impure_ptr                                       /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-impure.o)
+_init                                             /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v6-m/crti.o
+                                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-init.o)
+_mainCRTStartup                                   /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+_start                                            /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+atexit                                            /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+b_sam_ba_interface_usart                          build/sam_ba_monitor.o (symbol from plugin)
+b_sharp_received                                  build/sam_ba_serial.o (symbol from plugin)
+b_terminal_mode                                   build/sam_ba_monitor.o (symbol from plugin)
+board_init                                        build/board_init.o (symbol from plugin)
+                                                  build/main.o (symbol from plugin)
+buffer_rx_usart                                   build/sam_ba_serial.o (symbol from plugin)
+buffer_tx_usart                                   build/sam_ba_serial.o (symbol from plugin)
+call_applet                                       build/sam_ba_monitor.o (symbol from plugin)
+cdc_getc                                          build/sam_ba_cdc.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+cdc_is_rx_ready                                   build/sam_ba_cdc.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+cdc_putc                                          build/sam_ba_cdc.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+cdc_read_buf                                      build/sam_ba_cdc.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+cdc_read_buf_xmd                                  build/sam_ba_cdc.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+cdc_write_buf                                     build/sam_ba_cdc.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+command                                           build/sam_ba_monitor.o (symbol from plugin)
+current_number                                    build/sam_ba_monitor.o (symbol from plugin)
+data                                              build/sam_ba_monitor.o (symbol from plugin)
+error_timeout                                     build/sam_ba_serial.o (symbol from plugin)
+exception_table                                   samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/board_startup.o (symbol from plugin)
+exit                                              /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-exit.o)
+                                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+g_interrupt_enabled                               build/board_init.o (symbol from plugin)
+hardware_init_hook                                /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+i                                                 build/sam_ba_monitor.o (symbol from plugin)
+idx_rx_read                                       build/sam_ba_serial.o (symbol from plugin)
+idx_rx_write                                      build/sam_ba_serial.o (symbol from plugin)
+idx_tx_read                                       build/sam_ba_serial.o (symbol from plugin)
+idx_tx_write                                      build/sam_ba_serial.o (symbol from plugin)
+j                                                 build/sam_ba_monitor.o (symbol from plugin)
+ledDirection                                      build/board_driver_led.o (symbol from plugin)
+ledKeepValue                                      build/board_driver_led.o (symbol from plugin)
+ledTargetValue                                    build/board_driver_led.o (symbol from plugin)
+length                                            build/sam_ba_monitor.o (symbol from plugin)
+line_coding                                       build/sam_ba_cdc.o (symbol from plugin)
+                                                  build/sam_ba_usb.o (symbol from plugin)
+main                                              samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  build/main.o (symbol from plugin)
+                                                  build/board_startup.o (symbol from plugin)
+                                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+memcpy                                            /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memcpy-stub.o)
+                                                  samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+memset                                            /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-memset.o)
+                                                  samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+                                                  /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+mode_of_transfer                                  build/sam_ba_serial.o (symbol from plugin)
+ptr                                               build/sam_ba_monitor.o (symbol from plugin)
+ptr_data                                          build/sam_ba_monitor.o (symbol from plugin)
+ptr_monitor_if                                    build/sam_ba_monitor.o (symbol from plugin)
+pulSketch_Start_Address                           build/main.o (symbol from plugin)
+rxLEDPulse                                        build/sam_ba_monitor.o (symbol from plugin)
+sam_ba_cdc                                        build/sam_ba_usb.o (symbol from plugin)
+                                                  build/sam_ba_cdc.o (symbol from plugin)
+sam_ba_monitor_init                               build/sam_ba_monitor.o (symbol from plugin)
+                                                  build/main.o (symbol from plugin)
+sam_ba_monitor_run                                build/sam_ba_monitor.o (symbol from plugin)
+                                                  build/main.o (symbol from plugin)
+sam_ba_monitor_sys_tick                           build/sam_ba_monitor.o (symbol from plugin)
+                                                  build/main.o (symbol from plugin)
+sam_ba_putdata_term                               build/sam_ba_monitor.o (symbol from plugin)
+sam_ba_usb_CDC_Enumerate                          build/sam_ba_usb.o (symbol from plugin)
+                                                  build/board_driver_usb.o (symbol from plugin)
+serial_add_crc                                    build/sam_ba_serial.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+serial_close                                      build/sam_ba_serial.o (symbol from plugin)
+serial_getc                                       build/sam_ba_serial.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+serial_getdata                                    build/sam_ba_serial.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+serial_getdata_xmd                                build/sam_ba_serial.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+serial_is_rx_ready                                build/sam_ba_serial.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+serial_open                                       build/sam_ba_serial.o (symbol from plugin)
+                                                  build/main.o (symbol from plugin)
+serial_putc                                       build/sam_ba_serial.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+serial_putdata                                    build/sam_ba_serial.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+serial_putdata_xmd                                build/sam_ba_serial.o (symbol from plugin)
+                                                  build/sam_ba_monitor.o (symbol from plugin)
+serial_readc                                      build/sam_ba_serial.o (symbol from plugin)
+serial_sharp_received                             build/sam_ba_serial.o (symbol from plugin)
+                                                  build/main.o (symbol from plugin)
+size_of_data                                      build/sam_ba_serial.o (symbol from plugin)
+software_init_hook                                /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
+sp                                                build/sam_ba_monitor.o (symbol from plugin)
+strlen                                            /Users/Andrea/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/libc_nano.a(lib_a-strlen.o)
+                                                  samd21_sam_ba_arancino.elf.ltrans0.ltrans.o
+txLEDPulse                                        build/sam_ba_monitor.o (symbol from plugin)
+u32tmp                                            build/sam_ba_monitor.o (symbol from plugin)
+uart_basic_init                                   build/board_driver_serial.o (symbol from plugin)
+                                                  build/sam_ba_serial.o (symbol from plugin)
+uart_disable                                      build/board_driver_serial.o (symbol from plugin)
+                                                  build/sam_ba_serial.o (symbol from plugin)
+uart_drv_error_flag                               build/board_driver_serial.o (symbol from plugin)
+uart_if                                           build/sam_ba_monitor.o (symbol from plugin)
+uart_read_buffer_polled                           build/board_driver_serial.o (symbol from plugin)
+uart_read_byte                                    build/board_driver_serial.o (symbol from plugin)
+                                                  build/sam_ba_serial.o (symbol from plugin)
+uart_write_buffer_polled                          build/board_driver_serial.o (symbol from plugin)
+uart_write_byte                                   build/board_driver_serial.o (symbol from plugin)
+                                                  build/sam_ba_serial.o (symbol from plugin)
+udd_ep_in_cache_buffer                            build/board_driver_usb.o (symbol from plugin)
+udd_ep_out_cache_buffer                           build/board_driver_usb.o (symbol from plugin)
+                                                  build/sam_ba_usb.o (symbol from plugin)
+usb_endpoint_table                                build/board_driver_usb.o (symbol from plugin)
+usb_init                                          build/sam_ba_usb.o (symbol from plugin)
+                                                  build/main.o (symbol from plugin)
+usbcdc_if                                         build/sam_ba_monitor.o (symbol from plugin)
