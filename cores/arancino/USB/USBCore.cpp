@@ -65,7 +65,7 @@ const uint8_t STRING_PRODUCT[] = USB_PRODUCT;
 #  if defined(USB_MANUFACTURER)
 #    undef USB_MANUFACTURER
 #  endif
-#  define USB_MANUFACTURER "Smartme.io"
+#  define USB_MANUFACTURER "smartme.IO"
 #elif !defined(USB_MANUFACTURER)
 // Fall through to unknown if no manufacturer name was provided in a macro
 #  define USB_MANUFACTURER "Unknown"
