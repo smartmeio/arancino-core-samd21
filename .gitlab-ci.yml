@@ -57,7 +57,7 @@ package_staging:
         - mv tmp/ ../tmp 
 
         #tar files and move temp folder back
-        - tar -cvjf $PKG_NAME.tar.bz2 *
+        - tar -cvjf $PKG_NAME.tar.bz2 * --exclude='.git/' --exclude='.gitignore' --exclude='./folder'
         - mv ../tmp ./
         
         #move tar into temp folder
