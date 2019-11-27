@@ -156,6 +156,8 @@ upload:
     - branches
     - tags
 
+except:
+    - master
 
 #################################
 #######      CLEANUP      #######
@@ -174,3 +176,9 @@ cleanup:
     
     when: always
 
+    only:
+        - branches
+        - tags
+
+    except:
+        - master
