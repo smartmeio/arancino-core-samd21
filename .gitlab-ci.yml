@@ -58,13 +58,10 @@ package_staging:
         - mv tmp/ ../tmp && cd ../
 
         #tar files and move temp folder back
-        #- tar -cvjf $PKG_NAME.tar.bz2 *
-        - zip -r $PKG_NAME.tar.bz2 $CI_PROJECT_NAME -x"$CI_PROJECT_NAME/*.git*" "$CI_PROJECT_NAME/*.DS_Store*"
-        - cd $CI_PROJECT_NAME
-        - mv ../tmp ./
+        - tar --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
         
         #move tar into temp folder
-        - mv ../$PKG_NAME.tar.bz2 tmp/
+        - mv $PKG_NAME.tar.bz2 tmp/
         
         #create files containing sha 256 checksum and size in bytes of the tar file 
         - sha256sum tmp/$PKG_NAME.tar.bz2 | awk '{print $1}' > tmp/SHA256.txt
@@ -103,13 +100,10 @@ package_release:
         - mv tmp/ ../tmp && cd ../
 
         #tar files and move temp folder back
-        #- tar -cvjf $PKG_NAME.tar.bz2 *
-        - zip -r $PKG_NAME.tar.bz2 $CI_PROJECT_NAME -x"$CI_PROJECT_NAME/*.git*" "$CI_PROJECT_NAME/*.DS_Store*"
-        - cd $CI_PROJECT_NAME
-        - mv ../tmp ./
+        - tar --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
         
         #move tar into temp folder
-        - mv ../$PKG_NAME.tar.bz2 tmp/
+        - mv $PKG_NAME.tar.bz2 tmp/
         
         #create files containing sha 256 checksum and size in bytes of the tar file 
         - sha256sum tmp/$PKG_NAME.tar.bz2 | awk '{print $1}' > tmp/SHA256.txt
