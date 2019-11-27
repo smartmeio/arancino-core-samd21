@@ -117,7 +117,7 @@ package_release:
 
     artifacts:
         paths:
-            - ../tmp/
+            - tmp/
 
     except:
         - branches
