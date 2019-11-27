@@ -45,6 +45,7 @@ package_staging:
     stage: package
 
     script: 
+        - apk add zip
         #create some variables into temp folder
         - DATE="$(cat tmp/date.txt)"
         - TIME="$(cat tmp/time.txt)"
@@ -54,11 +55,12 @@ package_staging:
         - echo $DATE/$CI_COMMIT_REF_NAME-${CI_COMMIT_SHA:0:8} > tmp/target_path.txt
         
         #move temp folder into parent folder
-        - mv tmp/ ../tmp 
+        - mv tmp/ ../tmp && cd ../
 
         #tar files and move temp folder back
-        - rm -rf .git/ && rm .gitignore
-        - tar -cvjf $PKG_NAME.tar.bz2 *
+        #- tar -cvjf $PKG_NAME.tar.bz2 *
+        - zip -r $PKG_NAME.tar.bz2 $CI_PROJECT_NAME -x"$CI_PROJECT_NAME/*.git*" "$CI_PROJECT_NAME/*.DS_Store*"
+        - cd $CI_PROJECT_NAME
         - mv ../tmp ./
         
         #move tar into temp folder
@@ -90,7 +92,7 @@ package_release:
     stage: package
 
     script:
-        
+        - apk add zip
         #create some variables into temp folder
         - PKG_NAME=$PLATFORM_NAME-$CI_COMMIT_REF_NAME
         - echo $PKG_NAME > tmp/pgk_name.txt
@@ -98,10 +100,12 @@ package_release:
         - echo $CI_COMMIT_REF_NAME > tmp/target_path.txt
         
         #move temp folder into parent folder
-        - mv tmp/ ../tmp 
+        - mv tmp/ ../tmp && cd ../
 
         #tar files and move temp folder back
-        - tar -cvjf $PKG_NAME.tar.bz2 *
+        #- tar -cvjf $PKG_NAME.tar.bz2 *
+        - zip -r $PKG_NAME.tar.bz2 $CI_PROJECT_NAME -x"$CI_PROJECT_NAME/*.git*" "$CI_PROJECT_NAME/*.DS_Store*"
+        - cd $CI_PROJECT_NAME
         - mv ../tmp ./
         
         #move tar into temp folder
