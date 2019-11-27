@@ -54,13 +54,12 @@ package_staging:
         - echo $CI_PROJECT_NAME-snapshot > tmp/repo_name.txt
         - echo $DATE/$CI_COMMIT_REF_NAME-${CI_COMMIT_SHA:0:8} > tmp/target_path.txt
         
-        #move temp folder into parent folder
-        - mv tmp/ ../tmp && cd ../
-
+        - cd ..
         #tar files and move temp folder back
-        - tar --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
+        - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
         
         #move tar into temp folder
+        - cd $CI_PROJECT_NAME
         - mv $PKG_NAME.tar.bz2 tmp/
         
         #create files containing sha 256 checksum and size in bytes of the tar file 
@@ -69,6 +68,7 @@ package_staging:
         - echo FILENAME $PKG_NAME.tar.bz2
         - echo SHA-256 `cat tmp/SHA256.txt`
         - echo SIZE `cat tmp/SIZE.txt`
+        - echo PKG_NAME `cat tmp/pgk_name.txt`
 
     dependencies:
         - start  
@@ -96,13 +96,12 @@ package_release:
         - echo $CI_PROJECT_NAME > tmp/repo_name.txt
         - echo $CI_COMMIT_REF_NAME > tmp/target_path.txt
         
-        #move temp folder into parent folder
-        - mv tmp/ ../tmp && cd ../
-
+        - cd ..
         #tar files and move temp folder back
-        - tar --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
+        - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
         
         #move tar into temp folder
+        - cd $CI_PROJECT_NAME
         - mv $PKG_NAME.tar.bz2 tmp/
         
         #create files containing sha 256 checksum and size in bytes of the tar file 
@@ -111,13 +110,14 @@ package_release:
         - echo FILENAME $PKG_NAME.tar.bz2
         - echo SHA-256 `cat tmp/SHA256.txt`
         - echo SIZE `cat tmp/SIZE.txt`
+        - echo PKG_NAME `cat tmp/pgk_name.txt`
 
     dependencies:
         - start
 
     artifacts:
         paths:
-            - tmp/
+            - ../tmp/
 
     except:
         - branches
