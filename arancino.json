@@ -2,7 +2,6 @@
   "build": {
     "core": "samd",
     "cpu": "cortex-m0plus",
-    "board": "SAMD_ARDUINO",
     "extra_flags": "-DARDUINO_SAMD_ZERO -DARDUINO_ARCH_SAMD -D__SAMD21G18A__",
     "f_cpu": "48000000L",
     "hwids": [
@@ -16,10 +15,6 @@
     "usb_product": "Arancino",
     "variant": "arduino_zero"
   },
-  "bootloader": {
-    "tool": "openocd",
-    "file": "arancino/samd21_sam_ba_arancino.bin"
-  },
   "debug": {
     "jlink_device": "ATSAMD21G18",
     "onboard_tools": [
@@ -32,7 +27,6 @@
   "frameworks": [
     "arduino"
   ],
-  "frameworks": ["arduino"],
   "name": "Arancino",
   "platform": "atmelsam",
   "upload": {
@@ -52,6 +46,6 @@
     "use_1200bps_touch": true,
     "wait_for_upload_port": true
   },
-  "url": "http://smartme.io/it/projects/arancino-cc-2/",
+  "url": "http://smartme.io",
   "vendor": "smartme.io"
 }
