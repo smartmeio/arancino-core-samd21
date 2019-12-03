@@ -17,7 +17,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-menu.memory_wrapping=Using Arancino Library?
+menu.freertos=Using FreeRTOS?
 
 
 # Arancino Mignon (Native USB Port)
@@ -28,12 +28,12 @@ arancino_mignon.vid.0=0x04D8
 arancino_mignon.pid.0=0xECD9
 
 
-arancino_mignon.menu.memory_wrapping.no=No
-arancino_mignon.menu.memory_wrapping.yes=Yes
-arancino_mignon.menu.memory_wrapping.no.build.memory_wrapping_flags=
-arancino_mignon.menu.memory_wrapping.no.build.arancino_extra_flags=
-arancino_mignon.menu.memory_wrapping.yes.build.memory_wrapping_flags=-Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
-arancino_mignon.menu.memory_wrapping.yes.build.arancino_extra_flags=-D__MEM_WRAP__
+arancino_mignon.menu.freertos.no=No
+arancino_mignon.menu.freertos.yes=Yes
+arancino_mignon.menu.freertos.no.build.memory_wrapping_flags=
+arancino_mignon.menu.freertos.no.build.arancino_extra_flags=
+arancino_mignon.menu.freertos.yes.build.memory_wrapping_flags=-Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
+arancino_mignon.menu.freertos.yes.build.arancino_extra_flags=-DUSEFREERTOS
 
 arancino_mignon.upload.tool=bossac
 arancino_mignon.upload.protocol=sam-ba
@@ -64,12 +64,12 @@ arancino.upload.via_ssh=true
 arancino.vid.0=0x04D8
 arancino.pid.0=0xECDA
 
-arancino.menu.memory_wrapping.no=No
-arancino.menu.memory_wrapping.yes=Yes
-arancino.menu.memory_wrapping.no.build.memory_wrapping_flags=
-arancino.menu.memory_wrapping.no.build.arancino_extra_flags=
-arancino.menu.memory_wrapping.yes.build.memory_wrapping_flags=-Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
-arancino.menu.memory_wrapping.yes.build.arancino_extra_flags=-D__MEM_WRAP__
+arancino.menu.freertos.no=No
+arancino.menu.freertos.yes=Yes
+arancino.menu.freertos.no.build.memory_wrapping_flags=
+arancino.menu.freertos.no.build.arancino_extra_flags=
+arancino.menu.freertos.yes.build.memory_wrapping_flags=-Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
+arancino.menu.freertos.yes.build.arancino_extra_flags=-DUSEFREERTOS
 
 arancino.upload.tool=bossac
 arancino.upload.protocol=sam-ba
