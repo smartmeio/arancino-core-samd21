@@ -16,7 +16,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 name=Arancino Boards
-version=1.0.0
+version=1.1.0
 
 # Compile variables
 # -----------------
