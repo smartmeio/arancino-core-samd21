@@ -161,6 +161,13 @@ bool Serial_::setup(USBSetup& setup)
 			{
 				initiateReset(250);
 			}
+			// auto-reset is triggered when the port, already
+			// open at 300 bps, is closed. We check DTR state to determine if host 
+			// port is open (bit 0 of lineState).
+			else if (_usbLineInfo.dwDTERate == 300 && (_usbLineInfo.lineState & CDC_LINESTATE_DTR) == 0)
+			{
+				NVIC_SystemReset();
+			}	
 			else
 			{
 				cancelReset();
