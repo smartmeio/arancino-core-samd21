@@ -92,6 +92,10 @@ volatile bool b_sam_ba_interface_usart = false;
 volatile uint16_t txLEDPulse = 0; // time remaining for Tx LED pulse
 volatile uint16_t rxLEDPulse = 0; // time remaining for Rx LED pulse
 
+#if defined(RS485_ENABLED)
+volatile uint16_t rxTx485State = RS485_RX; // time remaining for Rx LED pulse
+#endif
+
 void sam_ba_monitor_init(uint8_t com_interface)
 {
 #if defined(SAM_BA_UART_ONLY)  ||  defined(SAM_BA_BOTH_INTERFACES)
@@ -116,7 +120,7 @@ void sam_ba_monitor_init(uint8_t com_interface)
 static uint32_t sam_ba_putdata(t_monitor_if* pInterface, void const* data, uint32_t length)
 {
 	uint32_t result ;
-
+  RS485_tx();
 	result=pInterface->putdata(data, length);
 
 	LEDTX_on();
@@ -271,6 +275,7 @@ static bool flashNeeded = false;
 
 static void sam_ba_monitor_loop(void)
 {
+  RS485_rx();
   length = sam_ba_getdata(ptr_monitor_if, data, SIZEBUFMAX);
   ptr = data;
 
@@ -313,6 +318,7 @@ static void sam_ba_monitor_loop(void)
         i--;
         ptr--;
         //Do we expect more data ?
+        RS485_rx();
         if(j<current_number)
           sam_ba_getdata_xmd(ptr_monitor_if, ptr_data, current_number-j);
 
