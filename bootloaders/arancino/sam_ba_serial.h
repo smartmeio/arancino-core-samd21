@@ -89,6 +89,13 @@ int serial_sharp_received(void);
 bool serial_is_rx_ready(void);
 
 /**
+ * \brief This function checks if a character has been transmitter on the usart line
+ *
+ * \return \c 1 if a byte is ready to be read.
+ */
+bool serial_is_tx_done(void);
+
+/**
  * \brief Gets a value on usart line
  *
  * \return value read on usart line

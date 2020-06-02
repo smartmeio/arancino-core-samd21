@@ -121,6 +121,9 @@ void serial_open(void)
 	idx_tx_write = 0;
 
 	error_timeout = 0;
+
+	RS485_init();
+	RS485_rx();
 }
 
 /**
@@ -141,12 +144,16 @@ void serial_close(void)
  */
 int serial_putc(int value)
 {
+	RS485_tx();
 	uart_write_byte(BOOT_USART_MODULE, (uint8_t)value);
+	while(!serial_is_tx_done());
 	return 1;
 }
 
 int serial_getc(void)
 {
+	RS485_rx();
+
 	uint16_t retval;
 	//Wait until input buffer is filled
 	while(!(serial_is_rx_ready()));
@@ -171,6 +178,11 @@ bool serial_is_rx_ready(void)
 	return (BOOT_USART_MODULE->USART.INTFLAG.reg & SERCOM_USART_INTFLAG_RXC);
 }
 
+bool serial_is_tx_done(void)
+{
+	return (BOOT_USART_MODULE->USART.INTFLAG.reg & SERCOM_USART_INTFLAG_TXC);
+}
+
 int serial_readc(void)
 {
 	int retval;
@@ -190,6 +202,7 @@ uint32_t serial_putdata(void const* data, uint32_t length)
 		serial_putc(*ptrdata);
 		ptrdata++;
 	}
+	while(!serial_is_tx_done());
 	return (i);
 }
 
@@ -434,6 +447,7 @@ uint32_t serial_getdata_xmd(void* data, uint32_t length)
 	while (1)
   {
 		serial_putc('C');
+		RS485_rx();
 		timeout = loops_per_second;
 		while (!(serial_is_rx_ready()) && timeout)
 			timeout--;

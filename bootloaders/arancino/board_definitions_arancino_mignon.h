@@ -78,4 +78,7 @@
 #define BOARD_LEDTX_PORT                  (0)
 #define BOARD_LEDTX_PIN                   (27)
 
+#define BOARD_RS485_DIR_PORT              (0)
+#define BOARD_RS485_DIR_PIN               (14)
+
 #endif // _BOARD_DEFINITIONS_H_
