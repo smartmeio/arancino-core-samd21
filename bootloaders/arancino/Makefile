@@ -60,11 +60,12 @@ SIZE=$(ARM_GCC_PATH)size
 BOARD_ID?=arancino
 NAME?=samd21_sam_ba_arancino
 RS485?=RS485_DISABLED
+PRJ?=TCU_PRJ
 
 # -----------------------------------------------------------------------------
 # Compiler options
 SAM_BA_INTERFACES?=SAM_BA_BOTH_INTERFACES
-CFLAGS_EXTRA=-D__SAMD21G18A__ -DBOARD_ID_$(BOARD_ID) -D$(SAM_BA_INTERFACES) -D$(RS485)
+CFLAGS_EXTRA=-D__SAMD21G18A__ -DBOARD_ID_$(BOARD_ID) -D$(SAM_BA_INTERFACES) -D$(RS485) -D$(PRJ)
 CFLAGS=-mthumb -mcpu=cortex-m0plus -Wall -c -std=gnu99 -ffunction-sections -fdata-sections -nostdlib -nostartfiles --param max-inline-insns-single=500
 ifdef DEBUG
   CFLAGS+=-g3 -O1 -DDEBUG=1

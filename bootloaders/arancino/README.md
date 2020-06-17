@@ -103,5 +103,11 @@ BOARD_ID=arancino_mignon NAME=samd21_sam_ba_arancino_mignon make clean all
 for the **Arancino Mignon with RS485** we use `board_definitions_arancino_mignon.h` and it is build with the following command:
 
 ```
-BOARD_ID=arancino_mignon NAME=samd21_sam_ba_arancino_mignon_485 RS485=RS485_ENABLED make clean all
+BOARD_ID=arancino_mignon NAME=samd21_sam_ba_arancino_mignon_485 RS485=RS485_ENABLED PRJ=ARANCINO_PRJ make clean all
+```
+
+for the **Arancino Mignon with RS485 on TCU project** we use `board_definitions_arancino_mignon.h` and it is build with the following command:
+
+```
+BOARD_ID=arancino_mignon NAME=samd21_sam_ba_arancino_mignon_485 RS485=RS485_ENABLED PRJ=TCU_PRJ make clean all
 ```
