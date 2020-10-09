@@ -96,6 +96,9 @@ package_release:
         - echo $CI_PROJECT_NAME > tmp/repo_name.txt
         - echo $CI_COMMIT_REF_NAME > tmp/target_path.txt
         
+        - sed -i "s:\(ARANCINO_CORE_VERSION\) .*:\1 \"$CI_COMMIT_REF_NAME\":" ./cores/arancino/Arduino.h
+        - sed -i "s:\(version\)=.*:\1=$CI_COMMIT_REF_NAME:" ./platform.txt
+
         - cd ..
         #tar files and move temp folder back
         - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
