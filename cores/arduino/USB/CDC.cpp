@@ -155,11 +155,18 @@ bool Serial_::setup(USBSetup& setup)
 		if (r == CDC_SET_LINE_CODING || r == CDC_SET_CONTROL_LINE_STATE)
 		{
 			// auto-reset into the bootloader is triggered when the port, already
-			// open at 1200 bps, is closed. We check DTR state to determine if host 
+			// open at 1200 bps, is closed. We check DTR state to determine if host
 			// port is open (bit 0 of lineState).
 			if (_usbLineInfo.dwDTERate == 1200 && (_usbLineInfo.lineState & CDC_LINESTATE_DTR) == 0)
 			{
 				initiateReset(250);
+			}
+			// auto-reset is triggered when the port, already
+			// open at 300 bps, is closed. We check DTR state to determine if host 
+			// port is open (bit 0 of lineState).
+			else if (_usbLineInfo.dwDTERate == 300 && (_usbLineInfo.lineState & CDC_LINESTATE_DTR) == 0)
+			{
+				NVIC_SystemReset();
 			}
 			else
 			{
