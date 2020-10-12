@@ -78,7 +78,7 @@ BIN=$(NAME).bin
 HEX=$(NAME).hex
 
 
-INCLUDES=-I"$(MODULE_PATH)/tools/CMSIS/4.5.0/CMSIS/Include/" -I"$(MODULE_PATH)/tools/CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/"
+INCLUDES=-I"$(MODULE_PATH)/tools/CMSIS/4.5.0/CMSIS/Include/" -I"$(MODULE_PATH)/tools/CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/"
 
 # -----------------------------------------------------------------------------
 # Linker options
@@ -169,9 +169,9 @@ clean_for_atmel_studio:
 clean: $(AS_CLEAN)
 	@echo ----------------------------------------------------------
 	@echo Cleaning project
-	-$(RM) $(BIN)
-	-$(RM) $(HEX)
-	-$(RM) $(BUILD_PATH)/*.*
-	-rmdir $(BUILD_PATH)
+	-$(RM) -rf $(BIN)
+	-$(RM) -rf $(HEX) *.o *.s *.out ./--end-group.res
+	-$(RM) -rf $(BUILD_PATH)/*.*
+	-$(RM) -rf $(BUILD_PATH)
 
 .phony: print_info $(BUILD_PATH)
