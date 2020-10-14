@@ -1,0 +1,183 @@
+image: alpine:latest
+
+
+stages:
+    - start
+    - package
+    - upload
+    - cleanup
+
+#################################
+#######       START       #######
+#################################
+
+####### START
+start:
+    stage: start
+
+    variables:
+        GIT_STRATEGY: none
+
+    script:
+        - mkdir -p tmp
+        - echo `date +%Y-%m-%d` > tmp/date.txt
+        - echo `date +%H-%M-%S` > tmp/time.txt
+
+    artifacts:
+        paths:
+            - tmp/
+
+        expire_in: 1d
+
+    only:
+        - branches
+        - tags
+
+    except:
+        - master
+
+#################################
+#######      PACKAGE      #######
+#################################
+
+#######    Package Staging    #######
+package_staging:
+    stage: package
+
+    script: 
+        - apk add zip
+        #create some variables into temp folder
+        - DATE="$(cat tmp/date.txt)"
+        - TIME="$(cat tmp/time.txt)"
+        - PKG_NAME=$PLATFORM_NAME-$DATE-$TIME-$CI_COMMIT_REF_NAME-${CI_COMMIT_SHA:0:8}
+        - echo $PKG_NAME > tmp/pgk_name.txt
+        - echo $CI_PROJECT_NAME-snapshot > tmp/repo_name.txt
+        - echo $DATE/$CI_COMMIT_REF_NAME-${CI_COMMIT_SHA:0:8} > tmp/target_path.txt
+        
+        - cd ..
+        #tar files and move temp folder back
+        - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
+        
+        #move tar into temp folder
+        - cd $CI_PROJECT_NAME
+        - mv ../$PKG_NAME.tar.bz2 tmp/
+        
+        #create files containing sha 256 checksum and size in bytes of the tar file 
+        - sha256sum tmp/$PKG_NAME.tar.bz2 | awk '{print $1}' > tmp/SHA256.txt
+        - ls -l tmp/ | grep $PKG_NAME.tar.bz2 | awk '{print $5}' > tmp/SIZE.txt
+        - echo FILENAME $PKG_NAME.tar.bz2
+        - echo SHA-256 `cat tmp/SHA256.txt`
+        - echo SIZE `cat tmp/SIZE.txt`
+        - echo PKG_NAME `cat tmp/pgk_name.txt`
+
+    dependencies:
+        - start  
+  
+    artifacts:
+        paths:
+            - tmp/
+
+    only:
+        - branches
+
+    except:
+        - tags
+        - master
+
+#######    Package Release    #######
+package_release:
+    stage: package
+
+    script:
+        - apk add zip
+        #create some variables into temp folder
+        - PKG_NAME=$PLATFORM_NAME-$CI_COMMIT_REF_NAME
+        - echo $PKG_NAME > tmp/pgk_name.txt
+        - echo $CI_PROJECT_NAME > tmp/repo_name.txt
+        - echo $CI_COMMIT_REF_NAME > tmp/target_path.txt
+        
+        - cd ..
+        #tar files and move temp folder back
+        - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
+        
+        #move tar into temp folder
+        - cd $CI_PROJECT_NAME
+        - mv ../$PKG_NAME.tar.bz2 tmp/
+        
+        #create files containing sha 256 checksum and size in bytes of the tar file 
+        - sha256sum tmp/$PKG_NAME.tar.bz2 | awk '{print $1}' > tmp/SHA256.txt
+        - ls -l tmp/ | grep $PKG_NAME.tar.bz2 | awk '{print $5}' > tmp/SIZE.txt
+        - echo FILENAME $PKG_NAME.tar.bz2
+        - echo SHA-256 `cat tmp/SHA256.txt`
+        - echo SIZE `cat tmp/SIZE.txt`
+        - echo PKG_NAME `cat tmp/pgk_name.txt`
+
+    dependencies:
+        - start
+
+    artifacts:
+        paths:
+            - tmp/
+
+    except:
+        - branches
+        - master
+
+    only:
+        - tags
+
+#################################
+#######       UPLOAD      #######
+#################################
+
+#######    Upload Staging and Release   #######
+upload:
+
+    stage: upload
+
+    variables:
+        GIT_STRATEGY: none
+
+    script: 
+        - DATE="$(cat tmp/date.txt)"
+        - TIME="$(cat tmp/time.txt)"
+        - PKG_NAME="$(cat tmp/pgk_name.txt)"
+        - REPO_NAME="$(cat tmp/repo_name.txt)"
+        - TARGET_PATH="$(cat tmp/target_path.txt)"
+        - apk add curl
+        # Upload to Artifactory
+        - curl -u $REPO_USR:$REPO_PWD -T tmp/$PKG_NAME.tar.bz2 "${REPO_BASE_URL}/artifactory/${REPO_NAME}/${TARGET_PATH}/${PKG_NAME}.tar.bz2"
+
+#dependencies:
+#    - package
+
+    only:
+        - branches
+        - tags
+
+    except:
+        - master
+
+#################################
+#######      CLEANUP      #######
+#################################
+
+#######    Cleanup Job    #######
+cleanup:
+    stage: cleanup
+
+    variables:
+        GIT_STRATEGY: none
+    
+    script:
+        - echo "Cleaning up"
+        - rm -rf tmp/
+    
+    when: always
+
+    only:
+        - branches
+        - tags
+
+    except:
+        - master
