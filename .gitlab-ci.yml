@@ -64,7 +64,7 @@ package_staging:
         
         #create files containing sha 256 checksum and size in bytes of the tar file 
         - sha256sum tmp/$PKG_NAME.tar.bz2 | awk '{print $1}' > tmp/SHA256.txt
-        - du -b /tmp/$PKG_NAME.tar.bz2 | awk {'print $1}' > tmp/SIZE.txt
+        - du -b tmp/$PKG_NAME.tar.bz2 | awk {'print $1}' > tmp/SIZE.txt
         - echo FILENAME $PKG_NAME.tar.bz2
         - echo SHA-256 `cat tmp/SHA256.txt`
         - echo SIZE `cat tmp/SIZE.txt`
@@ -106,7 +106,7 @@ package_release:
         
         #create files containing sha 256 checksum and size in bytes of the tar file 
         - sha256sum tmp/$PKG_NAME.tar.bz2 | awk '{print $1}' > tmp/SHA256.txt
-        - du -b /tmp/$PKG_NAME.tar.bz2 | awk {'print $1}' > tmp/SIZE.txt
+        - du -b tmp/$PKG_NAME.tar.bz2 | awk {'print $1}' > tmp/SIZE.txt
         - echo FILENAME $PKG_NAME.tar.bz2
         - echo SHA-256 `cat tmp/SHA256.txt`
         - echo SIZE `cat tmp/SIZE.txt`
