@@ -1,9 +1,13 @@
-#### v 1.1.0 - 2020.10.13
+#### v 1.2.0 - 2020.10.13
 
-* Second release
+* Third release
 * Based on official samd core v1.8.9
 * now ArancinoOTA is the default upload tool for Arancino board
 * Arancino Mignon can be programmed both with bossac (by serial port) or with ArancinoOTA (by OTA)
+
+#### v 1.1.0 - 2020.01.09
+
+* Second release
 
 #### v 1.0.0 - 2019.11.27
 
