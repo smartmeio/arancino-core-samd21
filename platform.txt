@@ -19,8 +19,8 @@
 # For more info:
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
 
-name=Arduino SAMD (32-bits ARM Cortex-M0+) Boards
-version=1.8.9
+name=Arancino Boards
+version=1.1.0
 
 # Compile variables
 # -----------------
@@ -173,6 +173,27 @@ tools.bossacI_remote.upload.pattern=/usr/bin/run-bossac {upload.verbose} --port=
 tools.bossacI.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
 tools.bossacI.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
 
+#
+# ArancinoOTA
+#
+
+tools.ArancinoOTA.path={runtime.tools.ArancinoOTA.path}
+
+tools.ArancinoOTA.cmd=ArancinoOTA
+tools.ArancinoOTA.cmd.linux=ArancinoOTA
+tools.ArancinoOTA.cmd.windows=ArancinoOTA.exe
+tools.ArancinoOTA.cmd.macosx=ArancinoOTA.app/Contents/MacOS/ArancinoOTA
+
+tools.ArancinoOTA.upload.params.verbose=
+tools.ArancinoOTA.upload.params.quiet=
+
+tools.ArancinoOTA.network_cmd={runtime.tools.ArancinoOTA.path}/ArancinoOTA
+tools.ArancinoOTA.network_cmd.linux={runtime.tools.ArancinoOTA.path}/ArancinoOTA
+tools.ArancinoOTA.network_cmd.windows={runtime.tools.ArancinoOTA.path}/ArancinoOTA.exe
+tools.ArancinoOTA.network_cmd.macosx={runtime.tools.ArancinoOTA.path}/ArancinoOTA.app/Contents/MacOS/ArancinoOTA
+
+tools.ArancinoOTA.upload.pattern="{path}/{cmd}" --ip {serial.port} --path "{build.path}/{build.project_name}.bin"
+tools.ArancinoOTA.upload.network_pattern="{network_cmd}" --ip {serial.port} --path "{build.path}/{build.project_name}.bin"
 
 #
 # OpenOCD sketch upload

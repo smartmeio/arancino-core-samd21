@@ -18,15 +18,18 @@
 # under the License.
 
 menu.freertos=Using FreeRTOS?
+menu.UploadTool=Upload TOOL
 
-
-# Arancino Mignon (Native USB Port)
+# Arancino Mignon (Native USB Port or OTA)
 # ---------------------------------------
 arancino_mignon.name=Arancino Mignon
-arancino_mignon.upload.via_ssh=true
 arancino_mignon.vid.0=0x04D8
 arancino_mignon.pid.0=0xECD9
 
+arancino_mignon.menu.UploadTool.ArancinoOTA=OTA
+arancino_mignon.menu.UploadTool.ArancinoOTA.upload.tool=ArancinoOTA
+arancino_mignon.menu.UploadTool.bossac=Serial
+arancino_mignon.menu.UploadTool.bossac.upload.tool=bossac
 
 arancino_mignon.menu.freertos.no=No
 arancino_mignon.menu.freertos.yes=Yes
@@ -35,7 +38,6 @@ arancino_mignon.menu.freertos.no.build.arancino_extra_flags=
 arancino_mignon.menu.freertos.yes.build.memory_wrapping_flags=-Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
 arancino_mignon.menu.freertos.yes.build.arancino_extra_flags=-DUSEFREERTOS
 
-arancino_mignon.upload.tool=ArancinoOTA
 arancino_mignon.upload.protocol=sam-ba
 arancino_mignon.upload.maximum_size=262144
 arancino_mignon.upload.use_1200bps_touch=true
@@ -57,10 +59,9 @@ arancino_mignon.build.pid=0xECD9
 arancino_mignon.bootloader.tool=openocd
 arancino_mignon.bootloader.file=arancino/samd21_sam_ba_arancino_mignon.bin
 
-# Arancino (Native USB Port)
+# Arancino (OTA)
 # ---------------------------------------
 arancino.name=Arancino
-arancino.upload.via_ssh=true
 arancino.vid.0=0x04D8
 arancino.pid.0=0xECDA
 
