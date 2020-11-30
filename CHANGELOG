@@ -1,9 +1,11 @@
 #### v 1.2.0 - 2020.10.13
 
-* Third release
-* Based on official samd core v1.8.9
-* now ArancinoOTA is the default upload tool for Arancino board
-* Arancino Mignon can be programmed both with bossac (by serial port) or with ArancinoOTA (by OTA)
+* Based on official Arduino samd core v1.8.9.
+* Now ArancinoOTA is the default upload tool for Arancino board.
+* Arancino Mignon can be programmed both with bossac (by serial port) or with ArancinoOTA (by OTA).
+* Introduced a constant for Arancino Core version number: `ARANCINO_CORE_VERSION`.
+* Introduced the possibility to program Arancino Mignon via RS485.
+* Disabled file hex generation in build process to prevent and use only bin file to program mcu.
 * Enabled PWM timer on gpio 2
 
 #### v 1.1.0 - 2020.01.09
