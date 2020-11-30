@@ -4,6 +4,7 @@
 * Based on official samd core v1.8.9
 * now ArancinoOTA is the default upload tool for Arancino board
 * Arancino Mignon can be programmed both with bossac (by serial port) or with ArancinoOTA (by OTA)
+* Enabled PWM timer on gpio 2
 
 #### v 1.1.0 - 2020.01.09
 
