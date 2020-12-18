@@ -33,9 +33,7 @@ arancino_mignon.menu.UploadTool.bossac.upload.tool=bossac
 
 arancino_mignon.menu.freertos.no=No
 arancino_mignon.menu.freertos.yes=Yes
-arancino_mignon.menu.freertos.no.build.memory_wrapping_flags=
 arancino_mignon.menu.freertos.no.build.arancino_extra_flags=
-arancino_mignon.menu.freertos.yes.build.memory_wrapping_flags=-Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
 arancino_mignon.menu.freertos.yes.build.arancino_extra_flags=-DUSEFREERTOS
 
 arancino_mignon.upload.protocol=sam-ba
@@ -67,9 +65,7 @@ arancino.pid.0=0xECDA
 
 arancino.menu.freertos.no=No
 arancino.menu.freertos.yes=Yes
-arancino.menu.freertos.no.build.memory_wrapping_flags=
 arancino.menu.freertos.no.build.arancino_extra_flags=
-arancino.menu.freertos.yes.build.memory_wrapping_flags=-Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
 arancino.menu.freertos.yes.build.arancino_extra_flags=-DUSEFREERTOS
 
 arancino.upload.tool=ArancinoOTA
