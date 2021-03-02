@@ -1,3 +1,7 @@
+### v 1.3.0 - 2021.03.01
+
+* Based on official Arduino samd core v1.8.11.
+
 #### v 1.2.1 - 2021.01.14
 
 * Dropping `build.memory_wrapping_flags` entry which is not anymore supported by FreeRTOS_samd library
