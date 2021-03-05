@@ -50,7 +50,7 @@ package_release:
         - PKG_NAME=$PLATFORM_NAME-$CI_COMMIT_TAG
         - PKG_NAME_PIO=framework-arduino-samd-arancino-$CI_COMMIT_TAG
 
-        - echo $PKG_NAME > tmp/pgk_name.txt
+        - echo $PKG_NAME > tmp/pkg_name.txt
         - echo $PKG_NAME_PIO > tmp/pkg_name_pio.txt
         - echo $CI_PROJECT_NAME > tmp/repo_name.txt
         - echo $CI_COMMIT_TAG > tmp/target_path.txt
@@ -78,7 +78,7 @@ package_release:
         - echo FILENAME $PKG_NAME.tar.bz2
         - echo SHA-256 `cat tmp/SHA256.txt`
         - echo SIZE `cat tmp/SIZE.txt`
-        - echo PKG_NAME `cat tmp/pgk_name.txt`
+        - echo PKG_NAME `cat tmp/pkg_name.txt`
 
         # same step above but for PIO
         - sha256sum tmp/$PKG_NAME_PIO.tar.bz2 | awk '{print $1}' > tmp/SHA256_pio.txt
@@ -86,7 +86,7 @@ package_release:
         - echo FILENAME_PIO $PKG_NAME_PIO.tar.bz2
         - echo SHA-256-PIO `cat tmp/SHA256_pio.txt`
         - echo SIZE_PIO `cat tmp/SIZE_pio.txt`
-        - echo PKG_NAME_PIO `cat tmp/pgk_name_pio.txt`
+        - echo PKG_NAME_PIO `cat tmp/pkg_name_pio.txt`
 
     dependencies:
         - start
@@ -119,7 +119,7 @@ upload:
     script:
         - DATE="$(cat tmp/date.txt)"
         - TIME="$(cat tmp/time.txt)"
-        - PKG_NAME="$(cat tmp/pgk_name.txt)"
+        - PKG_NAME="$(cat tmp/pkg_name.txt)"
         - PKG_NAME_PIO="$(cat tmp/pkg_name_pio.txt)"
         - REPO_NAME="$(cat tmp/repo_name.txt)"
         - TARGET_PATH="$(cat tmp/target_path.txt)"
