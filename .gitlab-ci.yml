@@ -1,4 +1,4 @@
-image: alpine:latest
+image: smartmeio/arancino-library-build
 
 
 stages:
@@ -113,6 +113,9 @@ upload:
     variables:
         GIT_STRATEGY: none
 
+    before_script:
+        - eval `python3 check-version-tag.py ${CI_COMMIT_TAG}`
+
     script:
         - DATE="$(cat tmp/date.txt)"
         - TIME="$(cat tmp/time.txt)"
@@ -121,6 +124,11 @@ upload:
         - REPO_NAME="$(cat tmp/repo_name.txt)"
         - TARGET_PATH="$(cat tmp/target_path.txt)"
         - apk add curl
+        - >
+          if [[ ${PRE_RELEASE} == "test" ]]; then
+            REPO_NAME=${REPO_NAME}-snapshot
+            REPO_NAME_PIO=${REPO_NAME_PIO}-snapshot
+          fi
         # Upload to Artifactory
         - curl -u $REPO_USR:$REPO_PWD -T tmp/$PKG_NAME.tar.bz2 "${REPO_BASE_URL}/artifactory/${REPO_NAME}/${TARGET_PATH}/${PKG_NAME}.tar.bz2"
         - curl -u $REPO_USR:$REPO_PWD -T tmp/$PKG_NAME_PIO.tar.bz2 "${REPO_BASE_URL}/artifactory/${REPO_NAME_PIO}/${TARGET_PATH}/${PKG_NAME_PIO}.tar.bz2"
