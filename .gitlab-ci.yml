@@ -45,7 +45,7 @@ package_release:
     stage: package
 
     script:
-        - apk add zip grep coreutils jq moreutils
+        # - apk add zip grep coreutils jq moreutils
         #create some variables into temp folder
         - PKG_NAME=$PLATFORM_NAME-$CI_COMMIT_TAG
         - PKG_NAME_PIO=framework-arduino-samd-arancino-$CI_COMMIT_TAG
@@ -123,7 +123,7 @@ upload:
         - PKG_NAME_PIO="$(cat tmp/pkg_name_pio.txt)"
         - REPO_NAME="$(cat tmp/repo_name.txt)"
         - TARGET_PATH="$(cat tmp/target_path.txt)"
-        - apk add curl
+        # - apk add curl
         - >
           if [[ ${PRE_RELEASE} == "test" ]]; then
             REPO_NAME=${REPO_NAME}-snapshot
