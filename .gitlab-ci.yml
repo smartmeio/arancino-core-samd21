@@ -107,11 +107,7 @@ package_release:
 
 #######    Upload Staging and Release   #######
 upload:
-
     stage: upload
-
-    variables:
-        GIT_STRATEGY: none
 
     before_script:
         - eval `python3 check-version-tag.py ${CI_COMMIT_TAG}`
