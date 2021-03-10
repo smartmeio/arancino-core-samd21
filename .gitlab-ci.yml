@@ -59,6 +59,10 @@ package_release:
         - sed -i "s:\(version\)=.*:\1=$CI_COMMIT_TAG:" ./platform.txt
         - jq --arg tag_ver ${CI_COMMIT_TAG} '.version = $tag_ver' package.json|sponge package.json
 
+        # adding Arduino Core-API
+        - git clone https://github.com/arduino/ArduinoCore-API.git -b 1.2.0 /tmp/ArduinoCore-API
+        - cp -r /tmp/ArduinoCore-API/api cores/arancino/
+
         - cd ..
         #tar files and move temp folder back
         - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
@@ -156,7 +160,7 @@ cleanup:
     
     script:
         - echo "Cleaning up"
-        - rm -rf tmp/
+        - rm -rf tmp/ /tmp/ArduinoCore-API
     
     when: always
 
