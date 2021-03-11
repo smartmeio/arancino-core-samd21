@@ -1,3 +1,9 @@
+#### v 1.2.2 - 2021.03.11
+
+* main features of previous release
+* [#et1342](https://app.clickup.com/t/et1342) ArduinoOTA tool updated to release v1.0.10
+* [#agym78](https://app.clickup.com/t/agym78) Dual Compatibility with PlatformIO (platform and tools)
+
 #### v 1.2.1 - 2021.01.14
 
 * Dropping `build.memory_wrapping_flags` entry which is not anymore supported by FreeRTOS_samd library
