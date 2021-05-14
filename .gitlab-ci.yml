@@ -1,4 +1,4 @@
-image: alpine:latest
+image: smartmeio/arancino-library-build
 
 
 stages:
@@ -30,90 +30,61 @@ start:
         expire_in: 1d
 
     only:
-        - branches
         - tags
 
     except:
         - master
+        - branches
 
 #################################
 #######      PACKAGE      #######
 #################################
-
-#######    Package Staging    #######
-package_staging:
-    stage: package
-
-    script: 
-        - apk add zip grep coreutils
-        #create some variables into temp folder
-        - DATE="$(cat tmp/date.txt)"
-        - TIME="$(cat tmp/time.txt)"
-        - PKG_NAME=$PLATFORM_NAME-$DATE-$TIME-$CI_COMMIT_REF_NAME-${CI_COMMIT_SHA:0:8}
-        - echo $PKG_NAME > tmp/pgk_name.txt
-        - echo $CI_PROJECT_NAME-snapshot > tmp/repo_name.txt
-        - echo $DATE/$CI_COMMIT_REF_NAME-${CI_COMMIT_SHA:0:8} > tmp/target_path.txt
-        
-        - cd ..
-        #tar files and move temp folder back
-        - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
-        
-        #move tar into temp folder
-        - cd $CI_PROJECT_NAME
-        - mv ../$PKG_NAME.tar.bz2 tmp/
-        
-        #create files containing sha 256 checksum and size in bytes of the tar file 
-        - sha256sum tmp/$PKG_NAME.tar.bz2 | awk '{print $1}' > tmp/SHA256.txt
-        - du -b tmp/$PKG_NAME.tar.bz2 | awk {'print $1}' > tmp/SIZE.txt
-        - echo FILENAME $PKG_NAME.tar.bz2
-        - echo SHA-256 `cat tmp/SHA256.txt`
-        - echo SIZE `cat tmp/SIZE.txt`
-        - echo PKG_NAME `cat tmp/pgk_name.txt`
-
-    dependencies:
-        - start  
-  
-    artifacts:
-        paths:
-            - tmp/
-
-    only:
-        - branches
-
-    except:
-        - tags
-        - master
 
 #######    Package Release    #######
 package_release:
     stage: package
 
     script:
-        - apk add zip grep coreutils
-        #create some variables into temp folder
-        - PKG_NAME=$PLATFORM_NAME-$CI_COMMIT_REF_NAME
-        - echo $PKG_NAME > tmp/pgk_name.txt
-        - echo $CI_PROJECT_NAME > tmp/repo_name.txt
-        - echo $CI_COMMIT_REF_NAME > tmp/target_path.txt
-        
-        - sed -i "s:\(ARANCINO_CORE_VERSION\) .*:\1 \"$CI_COMMIT_REF_NAME\":" ./cores/arancino/Arduino.h
-        - sed -i "s:\(version\)=.*:\1=$CI_COMMIT_REF_NAME:" ./platform.txt
+        # create some variables into temp folder
+        - PKG_NAME=$PLATFORM_NAME-$CI_COMMIT_TAG
+        - PKG_NAME_PIO=framework-arduino-samd-arancino-$CI_COMMIT_TAG
+
+        - echo $PKG_NAME > tmp/pkg_name.txt
+        - echo $PKG_NAME_PIO > tmp/pkg_name_pio.txt
+        - echo $CI_COMMIT_TAG > tmp/target_path.txt
+
+        - sed -i "s:\(ARANCINO_CORE_VERSION\) .*:\1 \"$CI_COMMIT_TAG\":" ./cores/arancino/Arduino.h
+        - sed -i "s:\(version\)=.*:\1=$CI_COMMIT_TAG:" ./platform.txt
+        - jq --arg tag_ver ${CI_COMMIT_TAG} '.version = $tag_ver' package.json|sponge package.json
 
         - cd ..
-        #tar files and move temp folder back
+        # tar files and move temp folder back
         - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
-        
-        #move tar into temp folder
+
+        # pio packaging
+        - cp -r $CI_PROJECT_NAME framework-arduino-samd-arancino
+        - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME_PIO.tar.bz2 framework-arduino-samd-arancino
+
+        # move tar into temp folder
         - cd $CI_PROJECT_NAME
         - mv ../$PKG_NAME.tar.bz2 tmp/
-        
-        #create files containing sha 256 checksum and size in bytes of the tar file 
+        - mv ../$PKG_NAME_PIO.tar.bz2 tmp/
+
+        # create files containing sha 256 checksum and size in bytes of the tar file
         - sha256sum tmp/$PKG_NAME.tar.bz2 | awk '{print $1}' > tmp/SHA256.txt
         - du -b tmp/$PKG_NAME.tar.bz2 | awk {'print $1}' > tmp/SIZE.txt
         - echo FILENAME $PKG_NAME.tar.bz2
         - echo SHA-256 `cat tmp/SHA256.txt`
         - echo SIZE `cat tmp/SIZE.txt`
-        - echo PKG_NAME `cat tmp/pgk_name.txt`
+        - echo PKG_NAME `cat tmp/pkg_name.txt`
+
+        # same step above but for PIO
+        - sha256sum tmp/$PKG_NAME_PIO.tar.bz2 | awk '{print $1}' > tmp/SHA256_pio.txt
+        - du -b tmp/$PKG_NAME_PIO.tar.bz2 | awk {'print $1}' > tmp/SIZE_pio.txt
+        - echo FILENAME_PIO $PKG_NAME_PIO.tar.bz2
+        - echo SHA-256-PIO `cat tmp/SHA256_pio.txt`
+        - echo SIZE_PIO `cat tmp/SIZE_pio.txt`
+        - echo PKG_NAME_PIO `cat tmp/pkg_name_pio.txt`
 
     dependencies:
         - start
@@ -121,7 +92,6 @@ package_release:
     artifacts:
         paths:
             - tmp/
-
     except:
         - branches
         - master
@@ -135,31 +105,32 @@ package_release:
 
 #######    Upload Staging and Release   #######
 upload:
-
     stage: upload
 
-    variables:
-        GIT_STRATEGY: none
+    before_script:
+        - eval `python3 check-version-tag.py ${CI_COMMIT_TAG}`
 
-    script: 
+    script:
         - DATE="$(cat tmp/date.txt)"
         - TIME="$(cat tmp/time.txt)"
-        - PKG_NAME="$(cat tmp/pgk_name.txt)"
-        - REPO_NAME="$(cat tmp/repo_name.txt)"
+        - PKG_NAME="$(cat tmp/pkg_name.txt)"
+        - PKG_NAME_PIO="$(cat tmp/pkg_name_pio.txt)"
         - TARGET_PATH="$(cat tmp/target_path.txt)"
-        - apk add curl
+        - >
+          if [[ ${PRE_RELEASE} == "test" ]]; then
+            REPO_NAME=${REPO_NAME}-snapshot
+            REPO_NAME_PIO=${REPO_NAME_PIO}-snapshot
+          fi
         # Upload to Artifactory
         - curl -u $REPO_USR:$REPO_PWD -T tmp/$PKG_NAME.tar.bz2 "${REPO_BASE_URL}/artifactory/${REPO_NAME}/${TARGET_PATH}/${PKG_NAME}.tar.bz2"
-
-#dependencies:
-#    - package
+        - curl -u $REPO_USR:$REPO_PWD -T tmp/$PKG_NAME_PIO.tar.bz2 "${REPO_BASE_URL}/artifactory/${REPO_NAME_PIO}/${TARGET_PATH}/${PKG_NAME_PIO}.tar.bz2"
 
     only:
-        - branches
         - tags
 
     except:
         - master
+        - branches
 
 #################################
 #######      CLEANUP      #######
@@ -171,16 +142,16 @@ cleanup:
 
     variables:
         GIT_STRATEGY: none
-    
+
     script:
         - echo "Cleaning up"
         - rm -rf tmp/
-    
+
     when: always
 
     only:
-        - branches
         - tags
 
     except:
         - master
+        - branches

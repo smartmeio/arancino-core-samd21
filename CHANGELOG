@@ -1,3 +1,10 @@
+#### v 1.2.2 - 2021.03.11
+
+* main features of previous release
+* ArduinoOTA tool updated to release v1.0.10 [#et1342](https://app.clickup.com/t/et1342)
+* Dual Compatibility with PlatformIO (platform and tools) [#agym78](https://app.clickup.com/t/agym78)
+* now the CI/CD script is only triggered by creation of tags
+
 #### v 1.2.1 - 2021.01.14
 
 * Dropping `build.memory_wrapping_flags` entry which is not anymore supported by FreeRTOS_samd library
