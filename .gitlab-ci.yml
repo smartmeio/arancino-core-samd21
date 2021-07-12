@@ -57,6 +57,9 @@ package_release:
         - sed -i "s:\(version\)=.*:\1=$CI_COMMIT_TAG:" ./platform.txt
         - jq --arg tag_ver ${CI_COMMIT_TAG} '.version = $tag_ver' package.json|sponge package.json
 
+        # adding Arduino-FreeRTOS-SAMD21 into core
+        - git clone $REPO_RTOS_URL -b $REPO_RTOS_TAG libraries/FreeRTOS-SAMD21
+
         - cd ..
         # tar files and move temp folder back
         - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
