@@ -89,16 +89,16 @@ package_release:
         - jq --arg tag_ver ${CI_COMMIT_TAG} '.version = $tag_ver' package.json|sponge package.json
 
         # adding Arduino-FreeRTOS-SAMD21 into core
-        - git clone $REPO_LIB_FREERTOS_URL -b $REPO_LIB_FREERTOS_TAG libraries/FreeRTOS-SAMD21
+        - git clone $REPO_LIB_FREERTOS_URL -b v2.3.0-smartmeio.1 libraries/FreeRTOS-SAMD21
         
         # adding ArduinoJson into core
-        - git clone $REPO_LIB_ARDUINOJSON_URL -b $REPO_LIB_ARDUINOJSON_TAG libraries/ArduinoJson
+        - git clone $REPO_LIB_ARDUINOJSON_URL -b v6.18.0 libraries/ArduinoJson
 
         # adding MsgPack into core
-        - git clone $REPO_LIB_MSGPACK_URL -b $REPO_LIB_MSGPACK_TAG libraries/MsgPack
+        - git clone $REPO_LIB_MSGPACK_URL -b 0.3.8 libraries/MsgPack
 
         # adding MsgPacketizer into core
-        - git clone $REPO_LIB_MSGPACKETIZER_URL -b $REPO_LIB_MSGPACKETIZER_TAG libraries/MsgPacketizer
+        - git clone $REPO_LIB_MSGPACKETIZER_URL -b 0.3.0 libraries/MsgPacketizer
 
         - cd ..
         # tar files and move temp folder back
