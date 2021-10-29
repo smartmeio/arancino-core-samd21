@@ -100,6 +100,9 @@ package_release:
         # adding MsgPacketizer into core
         - git clone $REPO_LIB_MSGPACKETIZER_URL -b 0.3.0 libraries/MsgPacketizer
 
+        # adding Microcontroller ID into core
+        - git clone $REPO_LIB_MICROCONTROLLER_ID_URL -b 1.0.0 libraries/Microcontroller-id
+
         - cd ..
         # tar files and move temp folder back
         - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
