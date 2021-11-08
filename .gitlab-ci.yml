@@ -103,6 +103,9 @@ package_release:
         # adding Microcontroller ID into core
         - git clone $REPO_LIB_MICROCONTROLLER_ID_URL -b 1.0.0 libraries/Microcontroller-id
 
+        # adding PubSubClient into core
+        - git clone $REPO_LIB_PUBSUBCLIENT_URL -b 1.0.0 libraries/PubSubClient
+
         - cd ..
         # tar files and move temp folder back
         - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
