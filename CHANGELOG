@@ -2,6 +2,8 @@
 
 * added FreeRTOS-SAMD21 library tag 2.3.0 that include freeRtos core version 10.2.1 [#nt82u1](https://app.clickup.com/t/nt82u1)
 * enabled atomic mode for analogRead and analogWrite function [#kd95qa](https://app.clickup.com/t/kd95qa)
+* definition of a new variable `MCU_FAMILY`[#1nf8f15](#https://app.clickup.com/t/1nf8f15)
+* moved the libraries used by arancino-library into the core
 
 #### v 1.2.2 - 2021.03.11
 
