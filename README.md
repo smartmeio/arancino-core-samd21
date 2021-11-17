@@ -8,7 +8,7 @@ for Atmel's SAMD21 processor (used on the Arancino and Arancino Mignon boards).
 This core is available as a package in the Arduino IDE cores manager. If you want to install it:
 
   1. Open the **Preferences** of the Arduino IDE.
-  2. Add this URL `https://git.smartme.io/smartme.io/arancino/arduino/smartmeio-package-index/raw/master/package_smartmeio_index.json` in the **Additional Boards Manager URLs** field, and click OK.
+  2. Add this URL `https://raw.githubusercontent.com/smartmeio/arancino-boards/master/package_smartmeio_index.json` in the **Additional Boards Manager URLs** field, and click OK.
   3. Open the **Boards Manager** (menu Tools->Board->Board Manager...)
   4. Install **Arancino Boards**
   5. Select one of the boards under **Arancino Boards** in Tools->Board menu

@@ -127,6 +127,10 @@ void analogReference(eAnalogReference mode)
 
 uint32_t analogRead(uint32_t pin)
 {
+	//noInterrupts();
+	#if defined(USEFREERTOS)
+	noInterrupts();
+	#endif
   uint32_t valueRead = 0;
 
   if (pin < A0) {
@@ -182,7 +186,11 @@ uint32_t analogRead(uint32_t pin)
   syncADC();
   ADC->CTRLA.bit.ENABLE = 0x00;             // Disable ADC
   syncADC();
-
+  
+	#if defined(USEFREERTOS)
+	interrupts();
+	#endif
+	//interrupts();
   return mapResolution(valueRead, _ADCResolution, _readResolution);
 }
 
@@ -195,6 +203,9 @@ void analogWrite(uint32_t pin, uint32_t value)
 {
   PinDescription pinDesc = g_APinDescription[pin];
   uint32_t attr = pinDesc.ulPinAttribute;
+  #if defined(USEFREERTOS)
+	noInterrupts();
+	#endif
 
   if ((attr & PIN_ATTR_ANALOG) == PIN_ATTR_ANALOG)
   {
@@ -303,6 +314,9 @@ void analogWrite(uint32_t pin, uint32_t value)
         syncTCC(TCCx);
       }
     }
+   	#if defined(USEFREERTOS)
+		interrupts();
+		#endif
     return;
   }
 

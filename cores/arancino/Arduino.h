@@ -135,6 +135,10 @@ void loop( void ) ;
 #define ARANCINO_CORE_VERSION "0.0.0"
 #endif
 
+#ifndef MCU_FAMILY
+#define MCU_FAMILY "SAMD21"
+#endif
+
 // USB Device
 #include "USB/USBDesc.h"
 #include "USB/USBCore.h"
