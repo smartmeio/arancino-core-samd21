@@ -104,7 +104,7 @@ package_release:
         - git clone $REPO_LIB_MICROCONTROLLER_ID_URL -b 1.0.0 libraries/Microcontroller-id
 
         # adding PubSubClient into core
-        - git clone $REPO_LIB_PUBSUBCLIENT_URL -b 2.8 libraries/PubSubClient
+        - git clone $REPO_LIB_PUBSUBCLIENT_URL -b v2.8 libraries/PubSubClient
 
         - cd ..
         # tar files and move temp folder back
