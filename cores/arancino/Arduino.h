@@ -139,6 +139,12 @@ void loop( void ) ;
 #define MCU_FAMILY "SAMD21"
 #endif
 
+//arancino library defines #23n7ujc
+#define BAUDRATE 4000000
+#define TIMEOUT 100
+#define SERIAL_PORT SerialUSB
+#define SERIAL_DEBUG Serial
+
 // USB Device
 #include "USB/USBDesc.h"
 #include "USB/USBCore.h"
