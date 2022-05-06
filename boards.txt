@@ -40,9 +40,9 @@ arancino_mignon.build.mcu=cortex-m0plus
 arancino_mignon.build.f_cpu=48000000L
 arancino_mignon.build.usb_product="Arancino Mignon"
 arancino_mignon.build.usb_manufacturer="smartme.IO"
-arancino_mignon.build.board=SAMD_ZERO
+arancino_mignon.build.board=ARANCINO_MIGNON
 arancino_mignon.build.core=arancino
-arancino_mignon.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DUSEFREERTOS -DENABLE_CALLOC_REALLOC=1
+arancino_mignon.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DUSEFREERTOS -DENABLE_CALLOC_REALLOC=1 -DARDUINO_SAMD_ZERO
 arancino_mignon.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
 arancino_mignon.build.openocdscript=openocd_scripts/arancino.cfg
 arancino_mignon.build.variant=arancino
@@ -68,9 +68,9 @@ arancino.build.mcu=cortex-m0plus
 arancino.build.f_cpu=48000000L
 arancino.build.usb_product="Arancino"
 arancino.build.usb_manufacturer="smartme.IO"
-arancino.build.board=SAMD_ZERO
+arancino.build.board=ARANCINO
 arancino.build.core=arancino
-arancino.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DUSEFREERTOS -DENABLE_CALLOC_REALLOC=1
+arancino.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DUSEFREERTOS -DENABLE_CALLOC_REALLOC=1 -DARDUINO_SAMD_ZERO
 arancino.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
 arancino.build.openocdscript=openocd_scripts/arancino.cfg
 arancino.build.variant=arancino

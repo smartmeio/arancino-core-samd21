@@ -1,3 +1,6 @@
+#### v 1.3.1 - 2022.05.06
+* Rename build board for Arancino and Arancino Mignon[#2webywq](https://app.clickup.com/t/2webywq)
+
 #### v 1.3.0 - 2021.11.16
 
 * added FreeRTOS-SAMD21 library tag 2.3.0 that include freeRtos core version 10.2.1 [#nt82u1](https://app.clickup.com/t/nt82u1)
