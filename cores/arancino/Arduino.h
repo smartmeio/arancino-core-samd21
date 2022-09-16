@@ -131,19 +131,32 @@ void loop( void ) ;
 
 // Allows Arancino Lib to read this value and pass it to Arancino Module
 // This value is modified in a CI/CD environment when a new tag is created
+// This values are intended to be used by the Arancino library, if you want to use different values you can edit the ArancinoDefinitions.h file
+
 #ifndef ARANCINO_CORE_VERSION
-#define ARANCINO_CORE_VERSION "0.0.0"
+#define ARANCINO_CORE_VERSION "1.3.0"
 #endif
 
 #ifndef MCU_FAMILY
 #define MCU_FAMILY "SAMD21"
 #endif
 
-//arancino library defines #23n7ujc
-#define BAUDRATE 4000000
-#define TIMEOUT 100
-#define SERIAL_PORT SerialUSB
-#define SERIAL_DEBUG Serial
+#ifndef ARANCINO_SERIAL
+#define ARANCINO_SERIAL SerialUSB
+#endif
+
+#ifndef ARANCINO_SERIAL_DEBUG
+#define ARANCINO_SERIAL_DEBUG Serial
+#endif
+
+#ifndef ARANCINO_BAUDRATE
+#define ARANCINO_BAUDRATE 4000000
+#endif
+
+#ifndef ARANCINO_TIMEOUT
+#define ARANCINO_TIMEOUT 100
+#endif
+
 
 // USB Device
 #include "USB/USBDesc.h"
