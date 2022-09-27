@@ -134,7 +134,7 @@ void loop( void ) ;
 // This values are intended to be used by the Arancino library, if you want to use different values you can edit the ArancinoDefinitions.h file
 
 #ifndef ARANCINO_CORE_VERSION
-#define ARANCINO_CORE_VERSION "1.3.0"
+#define ARANCINO_CORE_VERSION "1.3.2"
 #endif
 
 #ifndef MCU_FAMILY
