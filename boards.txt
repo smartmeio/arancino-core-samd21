@@ -31,6 +31,13 @@ arancino_mignon.menu.UploadTool.ArancinoOTA.upload.tool=ArancinoOTA
 arancino_mignon.menu.UploadTool.bossac=Serial
 arancino_mignon.menu.UploadTool.bossac.upload.tool=bossac
 
+arancino_mignon.menu.freertos.no=No
+arancino_mignon.menu.freertos.yes=Yes
+arancino_mignon.menu.freertos.no.build.arancino_extra_flags=
+arancino_mignon.menu.freertos.no.build.memory_wrapping_flags=
+arancino_mignon.menu.freertos.yes.build.arancino_extra_flags=-DUSEFREERTOS -DENABLE_CALLOC_REALLOC=1
+arancino_mignon.menu.freertos.yes.build.memory_wrapping_flags=-Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
+
 arancino_mignon.upload.protocol=sam-ba
 arancino_mignon.upload.maximum_size=262144
 arancino_mignon.upload.use_1200bps_touch=true
@@ -40,9 +47,9 @@ arancino_mignon.build.mcu=cortex-m0plus
 arancino_mignon.build.f_cpu=48000000L
 arancino_mignon.build.usb_product="Arancino Mignon"
 arancino_mignon.build.usb_manufacturer="smartme.IO"
-arancino_mignon.build.board=SAMD_ZERO
+arancino_mignon.build.board=ARANCINO_MIGNON
 arancino_mignon.build.core=arancino
-arancino_mignon.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DUSEFREERTOS -DENABLE_CALLOC_REALLOC=1
+arancino_mignon.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DARDUINO_SAMD_ZERO
 arancino_mignon.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
 arancino_mignon.build.openocdscript=openocd_scripts/arancino.cfg
 arancino_mignon.build.variant=arancino
@@ -58,6 +65,13 @@ arancino.name=Arancino
 arancino.vid.0=0x04D8
 arancino.pid.0=0xECDA
 
+arancino.menu.freertos.no=No
+arancino.menu.freertos.yes=Yes
+arancino.menu.freertos.no.build.arancino_extra_flags=
+arancino.menu.freertos.no.build.memory_wrapping_flags=
+arancino.menu.freertos.yes.build.arancino_extra_flags=-DUSEFREERTOS -DENABLE_CALLOC_REALLOC=1
+arancino.menu.freertos.yes.build.memory_wrapping_flags=-Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
+
 arancino.upload.tool=ArancinoOTA
 arancino.upload.protocol=sam-ba
 arancino.upload.maximum_size=262144
@@ -68,9 +82,9 @@ arancino.build.mcu=cortex-m0plus
 arancino.build.f_cpu=48000000L
 arancino.build.usb_product="Arancino"
 arancino.build.usb_manufacturer="smartme.IO"
-arancino.build.board=SAMD_ZERO
+arancino.build.board=ARANCINO
 arancino.build.core=arancino
-arancino.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DUSEFREERTOS -DENABLE_CALLOC_REALLOC=1
+arancino.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DARDUINO_SAMD_ZERO
 arancino.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
 arancino.build.openocdscript=openocd_scripts/arancino.cfg
 arancino.build.variant=arancino
