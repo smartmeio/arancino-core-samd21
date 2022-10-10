@@ -83,7 +83,7 @@ Through the menu `Tools` -> `Using FreeRTOS` -> `Yes`.
 ### PlatformIO
 Add an extra flag to the `platformio.ini` configuration file:
 ```
-build_flags = -DUSEFREERTOS
+build_flags = -DUSEFREERTOS -DENABLE_CALLOC_REALLOC -Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc
 ```
 
 
