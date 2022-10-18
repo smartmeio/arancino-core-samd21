@@ -199,13 +199,13 @@ index:
 
         # definisco la URL in base al core ed al tag
         - >
-            if [ "$CORE_NAME" = "samd21"]; then
+            if [[ ${CORE_NAME} == "samd21" ]]; then
                 URL="smartmeio-arancino-platform"
             else
                 URL="smartmeio-arancino-platform-$CORE_NAME"
             fi
 
-            if [ "$PRE_RELEASE" != "" ]; then
+            if [[ ${PRE_RELEASE} != "" ]]; then
                 URL="$URL-snapshot"
             fi
 
