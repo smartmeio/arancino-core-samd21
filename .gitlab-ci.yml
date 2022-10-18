@@ -211,7 +211,7 @@ index:
 
 
         #git clone della repo dell'index ()
-        - git clone https://github.com/smartmeio/arancino-boards.git tmp/index
+        - git clone https://git.smartme.io/sergio/smartmeio-package-index.git tmp/index
         - cd tmp/index
         - git checkout dev
         - package_template=`cat template_platform_smartmeio_$CORE_NAME.json`
