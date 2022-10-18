@@ -5,6 +5,7 @@ stages:
     - start
     - package
     - upload
+    - index
     - cleanup
 
 #################################
@@ -180,6 +181,87 @@ upload:
     except:
         - master
         - branches
+
+
+#################################
+########      INDEX      ########
+#################################
+#######    Create Json Index Entry for the Arduino Board Index   #######
+index:
+    stage: index
+    
+    before_script:
+        - eval `python3 check-version-tag.py ${CI_COMMIT_TAG}`
+
+    script:
+    
+        - VERSION=${CI_COMMIT_TAG}
+
+        # definisco la URL in base al core ed al tag
+        - >
+            if ["$CORE_NAME" = "samd21"]; then
+                URL="smartmeio-arancino-platform"
+            else
+                URL="smartmeio-arancino-platform-$CORE_NAME"
+            fi
+
+            if [ "$PRE_RELEASE" != "" ]; then
+                URL="$URL-snapshot"
+            fi
+
+
+        #git clone della repo dell'index ()
+        - git clone https://github.com/smartmeio/arancino-boards.git tmp/index
+        - cd tmp/index
+        - git checkout dev
+        - package_template=`cat template_platform_smartmeio_$CORE_NAME.json`
+
+
+        #creazione file a partire dal template
+        - FILENAME=smartmeio-arancino-${VERSION}.tar.bz2
+        - SIZE=`cat ../SIZE.txt`
+        - SHASUM=`cat ../SHA256.txt`
+        - > 
+            package_template=`echo $package_template |
+            sed s/%%FILENAME%%/${FILENAME}/g |
+            sed s/%%SIZE%%/${SIZE}/g |
+            sed s/%%SHA256%%/${SHASUM}/g|
+            sed s/%%URL%%/${URL}/g |
+            sed s/%%VERSION%%/${CI_COMMIT_TAG}/g`
+
+        #- set +x
+        #- echo $package_index
+
+        # export del contenuto su file
+        - echo $package_template > ../platform_index.json
+        
+        # merge del file template all'interno dell'index
+        - python3 ../../index-update.py
+
+        #push dev
+        - git add package_smartmeio_index.json
+        - git commit -m "adding $CORE_NAME platform realease $VERSION"
+        - git push origin dev
+        
+        #push master
+        - >
+            if [ "$PRE_RELEASE" = "" ]; then
+	            git checkout master
+	            python3 ../../index-update.py
+	            git add package_smartmeio_index.json
+	            git commit -m "adding SAMD platform realease $VERSION"
+
+                git push origin master
+	        fi
+        
+    
+    only:
+        - tags
+
+    except:
+        - master
+        - branches
+    
 
 #################################
 #######      CLEANUP      #######
