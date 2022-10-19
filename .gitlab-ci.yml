@@ -211,6 +211,8 @@ index:
 
 
         #git clone della repo dell'index ()
+        - git config user.name devops
+        - git config user.email devops@smartme.io
         - git clone https://$REPO_USR:$REPO_PWD@git.smartme.io/sergio/smartmeio-package-index.git tmp/index
         - cd tmp/index
         - git checkout dev
