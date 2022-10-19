@@ -251,7 +251,7 @@ index:
                 git checkout master
                 python3 ../../index-update.py
                 git add package_smartmeio_index.json
-                git commit -m "adding SAMD platform realease $VERSION"
+                git commit -m "adding $CORE_NAME platform realease $VERSION"
 
                 git push origin master
             fi

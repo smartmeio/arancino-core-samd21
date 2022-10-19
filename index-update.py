@@ -1,6 +1,6 @@
 import json
 
-#Caricamento sezione da inserire ottenuta dal file create tramite il bash
+#Caricamento sezione da inserire ottenuta dal file creato tramite il bash
 def loadNewSection():
     f = open('../platform_index.json')
     json_file = json.load(f)
