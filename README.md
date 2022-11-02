@@ -26,9 +26,11 @@ board = arancino
 framework = arduino
 upload_protocol = sam-ba
 platform_packages = smartme-io/framework-arduino-samd-arancino@https://git.smartme.io/smartme.io/arancino/ide/smartmeio-arancino-platform.git
+lib_deps = https://github.com/smartmeio/arancino-library
+  https://github.com/smartmeio/Arduino-FreeRTOS-SAMD21
 upload_port = ...
 ```
-Any used library (e.g. Arancino library) must be included under the `lib` folder, so the project structure should look like:
+Any other used library must be included as dependency through `lib_deps` (as for the Arancino library) or saved under the `lib` folder; in the latter case the project structure should look like:
 ```
 include
 lib
