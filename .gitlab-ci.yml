@@ -106,6 +106,9 @@ package_release:
         # adding PubSubClient into core
         - git clone $REPO_LIB_PUBSUBCLIENT_URL -b v2.8 libraries/PubSubClient
 
+        # adding ArduinoSreamUtils into core
+        - git clone $REPO_LIB_STREAMUTILS_URL -b v1.7.3 libraries/SreamUtils
+
         - cd ..
         # tar files and move temp folder back
         - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
