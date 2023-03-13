@@ -107,7 +107,7 @@ package_release:
         - git clone $REPO_LIB_PUBSUBCLIENT_URL -b v2.8 libraries/PubSubClient
 
         # adding ArduinoSreamUtils into core
-        - git clone $REPO_LIB_STREAMUTILS_URL -b v1.7.3 libraries/SreamUtils
+        - git clone $REPO_LIB_STREAMUTILS_URL -b v1.7.3 libraries/StreamUtils
 
         - cd ..
         # tar files and move temp folder back
