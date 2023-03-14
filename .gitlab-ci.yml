@@ -210,10 +210,11 @@ index:
             fi
 
 
-        #git clone della repo dell'index ()
+        #git clone della repo dell'index, in cui sono presenti i template ed il file di index ()
         - git config user.name devops
         - git config user.email devops@smartme.io
-        - git clone https://$REPO_USR:$REPO_PWD@git.smartme.io/sergio/smartmeio-package-index.git tmp/index
+        - git clone https://$REPO_USR:$REPO_PWD@git.smartme.io/smartme.io/arancino/ide/smartmeio-package-index.git tmp/index
+
         - cd tmp/index
         - git checkout dev
         - package_template=`cat template_platform_smartmeio_$CORE_NAME.json`
@@ -242,7 +243,7 @@ index:
 
         #push dev
         - git add package_smartmeio_index.json
-        - git commit -m "adding $CORE_NAME platform realease $VERSION"
+        - git commit -m "adding $CORE_NAME platform release $VERSION"
         - git push origin dev
         
         #push master
@@ -251,7 +252,7 @@ index:
                 git checkout master
                 python3 ../../index-update.py
                 git add package_smartmeio_index.json
-                git commit -m "adding $CORE_NAME platform realease $VERSION"
+                git commit -m "adding $CORE_NAME platform release $VERSION"
 
                 git push origin master
             fi
