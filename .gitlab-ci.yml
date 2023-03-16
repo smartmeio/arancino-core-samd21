@@ -20,6 +20,7 @@ start:
         GIT_STRATEGY: none
 
     script:
+        - rm -rf tmp/
         - mkdir -p tmp
         - echo `date +%Y-%m-%d` > tmp/date.txt
         - echo `date +%H-%M-%S` > tmp/time.txt
