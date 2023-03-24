@@ -1,3 +1,8 @@
+#### v 1.4.0 - 2023.MM.DD
+* SerialUSB Thread-Safe [#863fztk29](https://app.clickup.com/t/863fztk29)
+* Add StreamUtils Library [#863gant3w](https://app.clickup.com/t/863gant3w)
+* Fix incompatibility between macros min, max and other [#863gantae](https://app.clickup.com/t/863gantae)
+
 #### v 1.3.1 - 2022.09.27
 * Added menu entry for FreeRTOS enabling [#30cgvhy](https://app.clickup.com/t/30cgvhy)
 * Enabled heap functions wrapping [#30cgw4z] (https://app.clickup.com/t/30cgw4z)
