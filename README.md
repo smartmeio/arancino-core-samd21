@@ -25,7 +25,7 @@ platform = https://github.com/smartmeio/platform-atmelsam.git#8.1.0-arancino
 board = arancino
 framework = arduino
 upload_protocol = sam-ba
-platform_packages = smartme-io/framework-arduino-samd-arancino@https://git.smartme.io/smartme.io/arancino/ide/smartmeio-arancino-platform.git
+platform_packages = smartme-io/framework-arduino-samd-arancino@https://github.com/smartmeio/arancino-core-samd21.git
 lib_deps = https://github.com/smartmeio/arancino-library
   https://github.com/smartmeio/Arduino-FreeRTOS-SAMD21
 upload_port = ...
