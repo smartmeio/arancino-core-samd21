@@ -92,6 +92,7 @@ void loop( void ) ;
 #include "wiring_shift.h"
 #include "WInterrupts.h"
 
+#ifndef __cplusplus
 // undefine stdlib's abs if encountered
 #ifdef abs
 #undef abs
@@ -100,8 +101,22 @@ void loop( void ) ;
 #define min(a,b) ((a)<(b)?(a):(b))
 #define max(a,b) ((a)>(b)?(a):(b))
 #define abs(x) ((x)>0?(x):-(x))
-#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
 #define round(x)     ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
+#else
+  template<class T, class L> 
+  auto min(const T& a, const L& b) -> decltype((b < a) ? b : a)
+  {
+    return (b < a) ? b : a;
+  }
+
+  template<class T, class L> 
+  auto max(const T& a, const L& b) -> decltype((a < b) ? b : a)
+  {
+    return (a < b) ? b : a;
+  }
+#endif
+
+#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
 #define radians(deg) ((deg)*DEG_TO_RAD)
 #define degrees(rad) ((rad)*RAD_TO_DEG)
 #define sq(x) ((x)*(x))

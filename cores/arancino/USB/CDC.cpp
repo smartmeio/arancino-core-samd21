@@ -268,9 +268,15 @@ void Serial_::clear(void) {
 	usb.clear(CDC_ENDPOINT_IN);
 }
 
+extern void vTaskSuspendAll( void ) __attribute__((weak));
+extern void xTaskResumeAll( void ) __attribute__((weak));
 size_t Serial_::write(const uint8_t *buffer, size_t size)
 {
+	if (vTaskSuspendAll)
+		vTaskSuspendAll();
 	uint32_t r = usb.send(CDC_ENDPOINT_IN, buffer, size);
+	if (xTaskResumeAll)
+		xTaskResumeAll();
 
 	if (r > 0) {
 		return r;

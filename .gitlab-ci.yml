@@ -5,6 +5,7 @@ stages:
     - start
     - package
     - upload
+    - index
     - cleanup
 
 #################################
@@ -19,6 +20,7 @@ start:
         GIT_STRATEGY: none
 
     script:
+        - rm -rf tmp/
         - mkdir -p tmp
         - echo `date +%Y-%m-%d` > tmp/date.txt
         - echo `date +%H-%M-%S` > tmp/time.txt
@@ -106,6 +108,9 @@ package_release:
         # adding PubSubClient into core
         - git clone $REPO_LIB_PUBSUBCLIENT_URL -b v2.8 libraries/PubSubClient
 
+        # adding ArduinoSreamUtils into core
+        - git clone $REPO_LIB_STREAMUTILS_URL -b v1.7.3 libraries/StreamUtils
+
         - cd ..
         # tar files and move temp folder back
         - tar --exclude=tmp --exclude=.git* --exclude=*.DS_Store* -cvjf $PKG_NAME.tar.bz2 $CI_PROJECT_NAME
@@ -180,6 +185,90 @@ upload:
     except:
         - master
         - branches
+
+
+#################################
+########      INDEX      ########
+#################################
+#######    Create Json Index Entry for the Arduino Board Index   #######
+index:
+    stage: index
+    
+    before_script:
+        - eval `python3 check-version-tag.py ${CI_COMMIT_TAG}`
+
+    script:
+    
+        - VERSION=${CI_COMMIT_TAG}
+
+        # definisco la URL in base al core ed al tag
+        - >
+            if [[ ${CORE_NAME} == "samd21" ]]; then
+                URL="smartmeio-arancino-platform"
+            else
+                URL="smartmeio-arancino-platform-$CORE_NAME"
+            fi
+
+            if [[ ${PRE_RELEASE} != "" ]]; then
+                URL="$URL-snapshot"
+            fi
+
+
+        #git clone della repo dell'index, in cui sono presenti i template ed il file di index ()
+        - git config user.name devops
+        - git config user.email devops@smartme.io
+        - git clone https://$REPO_USR:$REPO_PWD@git.smartme.io/smartme.io/arancino/ide/smartmeio-package-index.git tmp/index
+
+        - cd tmp/index
+        - git checkout dev
+        - package_template=`cat template_platform_smartmeio_$CORE_NAME.json`
+
+
+        #creazione file a partire dal template
+        - FILENAME=smartmeio-arancino-${VERSION}.tar.bz2
+        - SIZE=`cat ../SIZE.txt`
+        - SHASUM=`cat ../SHA256.txt`
+        - > 
+            package_template=`echo $package_template |
+            sed s/%%FILENAME%%/${FILENAME}/g |
+            sed s/%%SIZE%%/${SIZE}/g |
+            sed s/%%SHA256%%/${SHASUM}/g|
+            sed s/%%URL%%/${URL}/g |
+            sed s/%%VERSION%%/${CI_COMMIT_TAG}/g`
+
+        #- set +x
+        #- echo $package_index
+
+        # export del contenuto su file
+        - echo $package_template > ../platform_index.json
+        
+        # merge del file template all'interno dell'index
+        - python3 ../../index-update.py
+
+        #push dev
+        - git add package_smartmeio_index.json
+        - git commit -m "adding $CORE_NAME platform release $VERSION"
+        - git push origin dev
+        
+        #push master
+        - >
+            if [ "$PRE_RELEASE" = "" ]; then
+                git checkout master
+                python3 ../../index-update.py
+                git add package_smartmeio_index.json
+                git commit -m "adding $CORE_NAME platform release $VERSION"
+
+                git push origin master
+            fi
+        
+    
+    only:
+        - tags
+
+    except:
+        - master
+        - branches
+    
 
 #################################
 #######      CLEANUP      #######
